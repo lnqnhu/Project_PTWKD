@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriBae - Nutrition Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="logo">
+            Nutri<span>Bae</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#ai">AI Assistant</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="register.html" class="nav-btn">
+        Get Started
+        </a>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-left">
+
+            <p class="tag">AI FOOD & NUTRITION ASSISTANT</p>
+
+            <h1>
+                Eat Smart.<br>
+                Stay Fit.<br>
+                Let <span>NutriBae</span> Care.
+            </h1>
+
+            <p class="hero-text">
+                NutriBae helps users order healthy meals, track calories,
+                monitor macros, and receive AI-powered nutrition suggestions
+                based on fitness goals.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn">Start Healthy</button>
+                <button class="secondary-btn">Explore Features</button>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>50K+</h3>
+                    <p>Healthy Users</p>
+                </div>
+
+                <div>
+                    <h3>1200+</h3>
+                    <p>Nutrition Meals</p>
+                </div>
+
+                <div>
+                    <h3>AI Powered</h3>
+                    <p>Smart Tracking</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+            <img src="/PRO_NUTRIBAE/images/bae.png" alt="NutriBae App">
+        </div>
+
+    </section>
+
+<!--MENU đồ ăn chạy-->
+<section class="food-slider">
+
+    <div class="marquee-left">
+
+        <div class="track">
+
+            <div class="food-card" data-name="Cơm tấm sườn trứng" data-image="images/comtam.png" data-cal="420" data-portion="Suất vừa (250g)" data-fat="2.5g" data-protein="12g" data-carbs="78g" data-fiber="1.2g">
+                <img src="images/comtam.png" alt="Cơm tấm" style="width: 250px; height: 150px;">
+                <h4>Cơm tấm sườn trứng</h4>
+            </div>
+
+            <div class="food-card" data-name="Bún riêu" data-image="images/bunrieu.png" data-cal="433" data-portion="Suất vừa (300g)" data-fat="3.1g" data-protein="15g" data-carbs="72g" data-fiber="2g">
+                <img src="images/bunrieu.png" alt="Bún riêu" style="width: 250px; height: 150px;">
+                <h4>Bún riêu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún đậu" data-image="images/bundau.png" data-cal="380" data-portion="Suất vừa (280g)" data-fat="4.2g" data-protein="18g" data-carbs="65g" data-fiber="1.5g">
+                <img src="images/bundau.png" alt="Bún đậu" style="width: 250px; height: 150px;">
+                <h4>Bún đậu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún bò" data-image="images/bunbo.png" data-cal="450" data-portion="Suất lớn (320g)" data-fat="5.5g" data-protein="20g" data-carbs="75g" data-fiber="2.1g">
+                <img src="images/bunbo.png" alt="Bún bò" style="width: 250px; height: 150px;">
+                <h4>Bún bò</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Mì cay" data-image="images/micay.png" data-cal="520" data-portion="Suất lớn (350g)" data-fat="8.2g" data-protein="18g" data-carbs="82g" data-fiber="1.8g">
+                <img src="images/micay.png" alt="Mì cay" style="width: 250px; height: 150px;">
+                <h4>Mì cay</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Mì ý sốt bò bằm Jollibee" data-image="images/miy.png" data-cal="580" data-portion="Suất chuẩn (300g)" data-fat="12.5g" data-protein="22g" data-carbs="85g" data-fiber="2.3g">
+                <img src="images/miy.png" alt="Mì ý sốt bò bằm Jollibee" style="width: 250px; height: 150px;">
+                <h4>Mì ý sốt bò bằm Jollibee</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Cơm trộn Hàn Quốc" data-image="images/comtron.png" data-cal="495" data-portion="Suất vừa (270g)" data-fat="6.8g" data-protein="16g" data-carbs="80g" data-fiber="2.5g">
+                <img src="images/comtron.png" alt="Cơm trộn Hàn Quốc" style="width: 250px; height: 150px;">
+                <h4>Cơm trộn Hàn Quốc</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Cơm chiên dương châu" data-image="images/comchien.png" data-cal="510" data-portion="Suất chuẩn (320g)" data-fat="7.5g" data-protein="14g" data-carbs="88g" data-fiber="1.9g">
+                <img src="images/comchien.png" alt="Cơm chiên dương châu" style="width: 250px; height: 150px;">
+                <h4>Cơm chiên dương châu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún nước tương" data-image="images/bunnuoctuong.png" data-cal="410" data-portion="Suất vừa (300g)" data-fat="2.8g" data-protein="16g" data-carbs="74g" data-fiber="1.7g">
+                <img src="images/bunnuoctuong.png" alt="Bún nước tương" style="width: 250px; height: 150px;">
+                <h4>Bún nước tương</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bột chiên" data-image="images/botchien.png" data-cal="380" data-portion="Suất vừa (200g)" data-fat="3.2g" data-protein="11g" data-carbs="65g" data-fiber="1.1g">
+                <img src="images/botchien.png" alt="Bột chiên" style="width: 250px; height: 150px;">
+                <h4>Bột chiên</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Cơm tấm sườn trứng" data-image="images/comtam.png" data-cal="420" data-portion="Suất vừa (250g)" data-fat="2.5g" data-protein="12g" data-carbs="78g" data-fiber="1.2g">
+                <img src="images/comtam.png" alt="Cơm tấm" style="width: 250px; height: 150px;">
+                <h4>Cơm tấm sườn trứng</h4>
+            </div>
+
+            <div class="food-card" data-name="Bún riêu" data-image="images/bunrieu.png" data-cal="433" data-portion="Suất vừa (300g)" data-fat="3.1g" data-protein="15g" data-carbs="72g" data-fiber="2g">
+                <img src="images/bunrieu.png" alt="Bún riêu" style="width: 250px; height: 150px;">
+                <h4>Bún riêu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún đậu" data-image="images/bundau.png" data-cal="380" data-portion="Suất vừa (280g)" data-fat="4.2g" data-protein="18g" data-carbs="65g" data-fiber="1.5g">
+                <img src="images/bundau.png" alt="Bún đậu" style="width: 250px; height: 150px;">
+                <h4>Bún đậu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún bò" data-image="images/bunbo.png" data-cal="450" data-portion="Suất lớn (320g)" data-fat="5.5g" data-protein="20g" data-carbs="75g" data-fiber="2.1g">
+                <img src="images/bunbo.png" alt="Bún bò" style="width: 250px; height: 150px;">
+                <h4>Bún bò</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Mì cay" data-image="images/micay.png" data-cal="520" data-portion="Suất lớn (350g)" data-fat="8.2g" data-protein="18g" data-carbs="82g" data-fiber="1.8g">
+                <img src="images/micay.png" alt="Mì cay" style="width: 250px; height: 150px;">
+                <h4>Mì cay</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Mì ý sốt bò bằm Jollibee" data-image="images/miy.png" data-cal="580" data-portion="Suất chuẩn (300g)" data-fat="12.5g" data-protein="22g" data-carbs="85g" data-fiber="2.3g">
+                <img src="images/miy.png" alt="Mì ý sốt bò bằm Jollibee" style="width: 250px; height: 150px;">
+                <h4>Mì ý sốt bò bằm Jollibee</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Cơm trộn Hàn Quốc" data-image="images/comtron.png" data-cal="495" data-portion="Suất vừa (270g)" data-fat="6.8g" data-protein="16g" data-carbs="80g" data-fiber="2.5g">
+                <img src="images/comtron.png" alt="Cơm trộn Hàn Quốc" style="width: 250px; height: 150px;">
+                <h4>Cơm trộn Hàn Quốc</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Cơm chiên dương châu" data-image="images/comchien.png" data-cal="510" data-portion="Suất chuẩn (320g)" data-fat="7.5g" data-protein="14g" data-carbs="88g" data-fiber="1.9g">
+                <img src="images/comchien.png" alt="Cơm chiên dương châu" style="width: 250px; height: 150px;">
+                <h4>Cơm chiên dương châu</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bún nước tương" data-image="images/bunnuoctuong.png" data-cal="410" data-portion="Suất vừa (300g)" data-fat="2.8g" data-protein="16g" data-carbs="74g" data-fiber="1.7g">
+                <img src="images/bunnuoctuong.png" alt="Bún nước tương" style="width: 250px; height: 150px;">
+                <h4>Bún nước tương</h4>
+                <p>433 cal</p>
+            </div>
+
+            <div class="food-card" data-name="Bột chiên" data-image="images/botchien.png" data-cal="380" data-portion="Suất vừa (200g)" data-fat="3.2g" data-protein="11g" data-carbs="65g" data-fiber="1.1g">
+                <img src="images/botchien.png" alt="Bột chiên" style="width: 250px; height: 150px;">
+                <h4>Bột chiên</h4>
+                <p>433 cal</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <p>OUR FEATURES</p>
+            <h2>Smart Nutrition Experience</h2>
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="card">
+                <div class="icon">🥗</div>
+                <h3>Healthy Food Ordering</h3>
+                <p>
+                    Order healthy meals with detailed calories and nutrition information.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔥</div>
+                <h3>Calorie Tracking</h3>
+                <p>
+                    Monitor calories intake daily and maintain balanced eating habits.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>AI Recommendations</h3>
+                <p>
+                    Personalized meal suggestions based on fitness goals and lifestyle.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📷</div>
+                <h3>Food Scanner</h3>
+                <p>
+                    Scan meals with camera recognition and estimate nutrition instantly.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💪</div>
+                <h3>Macro Monitoring</h3>
+                <p>
+                    Track protein, carbs, and fat to support muscle gain or weight loss.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⏰</div>
+                <h3>Smart Reminder</h3>
+                <p>
+                    Receive reminders for water intake, meals, and healthy habits.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI SECTION -->
+
+    <section class="ai-section" id="ai">
+
+        <div class="ai-left">
+            <img src="/PRO_NUTRIBAE/images/food.webp" alt="Healthy Food">
+        </div>
+
+        <div class="ai-right">
+
+            <p class="tag">YOUR HEALTH COMPANION</p>
+
+            <h2>
+                AI Assistant That Understands Your Lifestyle
+            </h2>
+
+            <p>
+                NutriBae's AI assistant communicates naturally with users,
+                recommends meals, analyzes calories, and supports healthier
+                daily routines.
+            </p>
+
+            <ul>
+                <li>✔ Personalized nutrition recommendations</li>
+                <li>✔ Smart meal planning</li>
+                <li>✔ Water and meal reminders</li>
+                <li>✔ Friendly virtual assistant interactions</li>
+            </ul>
+
+            <button class="primary-btn">Try AI Assistant</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+
+    <section class="pricing" id="pricing">
+
+        <div class="section-title">
+            <p>SUBSCRIPTION</p>
+            <h2>Choose Your Healthy Journey</h2>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Basic</h3>
+                <h1>$0</h1>
+                <p>Free forever</p>
+
+                <ul>
+                    <li>✔ Food Ordering</li>
+                    <li>✔ Basic Calorie Tracking</li>
+                    <li>✔ Meal History</li>
+                </ul>
+
+                <button>Get Started</button>
+            </div>
+
+
+            <div class="price-card premium">
+                <div class="popular">MOST POPULAR</div>
+
+                <h3>Premium</h3>
+                <h1>$9</h1>
+                <p>Per month</p>
+
+                <ul>
+                    <li>✔ AI Meal Recommendations</li>
+                    <li>✔ Smart Food Scanner</li>
+                    <li>✔ Macro Monitoring</li>
+                    <li>✔ Personalized Meal Plan</li>
+                </ul>
+
+                <button>Join Premium</button>
+            </div>
+
+
+            <div class="price-card">
+                <h3>Fitness Pro</h3>
+                <h1>$19</h1>
+                <p>Per month</p>
+
+                <ul>
+                    <li>✔ Everything in Premium</li>
+                    <li>✔ Gym Integration</li>
+                    <li>✔ Advanced Analytics</li>
+                    <li>✔ Nutrition Coaching</li>
+                </ul>
+
+                <button>Go Pro</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TESTIMONIAL -->
+
+    <section class="testimonial">
+
+        <div class="section-title">
+            <p>USER EXPERIENCE</p>
+            <h2>What Users Say About NutriBae</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="review-card">
+                <p>
+                    “NutriBae helped me lose 5kg while still enjoying delicious meals.”
+                </p>
+                <h4>- Sarah Nguyen</h4>
+            </div>
+
+            <div class="review-card">
+                <p>
+                    “The AI meal recommendation is surprisingly accurate and useful.”
+                </p>
+                <h4>- Minh Tran</h4>
+            </div>
+
+            <div class="review-card">
+                <p>
+                    “I love the calorie tracking and smart reminders every day.”
+                </p>
+                <h4>- David Le</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- FAQ SECTION -->
+
+<section class="faq">
+
+    <div class="section-title">
+        <p>SUPPORT</p>
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            NutriBae có miễn phí không?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            NutriBae cung cấp phiên bản miễn phí với các tính năng cơ bản giúp người dùng theo dõi dinh dưỡng hằng ngày.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            NutriBae Premium bao nhiêu tiền?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            NutriBae Premium có nhiều gói linh hoạt theo tháng hoặc năm với các tính năng nâng cao.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Làm sao để hủy Premium?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            Bạn có thể hủy Premium trong phần Cài đặt tài khoản bất cứ lúc nào.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            NutriBae có hỗ trợ món ăn Việt Nam không?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            Có. NutriBae được tối ưu cho thực phẩm và món ăn Việt Nam nhằm mang lại kết quả dinh dưỡng chính xác.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            AI nhận diện món ăn hoạt động như thế nào?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            Bạn chỉ cần chụp ảnh bữa ăn, AI của NutriBae sẽ tự động nhận diện món ăn và ước tính lượng calo cũng như các chất dinh dưỡng.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Dữ liệu của tôi có an toàn không?
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="faq-answer">
+            NutriBae áp dụng các tiêu chuẩn bảo mật hiện đại để bảo vệ dữ liệu cá nhân và thông tin sức khỏe của người dùng.
+        </div>
+    </div>
+
+</section>
+
+    <!-- FOOTER -->
+  <footer id="contact">
+
+    <div class="footer-logo">
+        Nutri<span>Bae</span>
+    </div>
+
+    <p>"Ăn ngon, dáng chuẩn, có Bae lo"</p>
+
+    <div class="company-footer">
+        <h3>CÔNG TY</h3>
+
+        <a href="#home">Về NutriBae</a>
+        <a href="PrivacyPolicy.pdf" target="_blank">Chính sách bảo mật</a>
+        <a href="TermsOfUse.pdf" target="_blank">Điều khoản sử dụng</a>
+        <a href="mailto:nutribae.team@gmail.com">Liên hệ</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+        <a href="#">Support</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 NutriBae. All Rights Reserved.
+    </p>
+
+</footer>
+    <script src="script.js"></script>
+
+    <!-- MODAL CHI TIẾT SẢN PHẨM -->
+    <div id="foodModal" class="food-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Món ăn">
+                </div>
+                
+                <div class="modal-info">
+                    <h2 id="modalName"></h2>
+                    <p class="modal-portion" id="modalPortion"></p>
+                    
+                    <div class="modal-calo">
+                        <span class="calo-label">CALO</span>
+                        <h1 id="modalCal"></h1>
+                    </div>
+
+                    <div class="modal-nutrition">
+                        <h3>Dinh dưỡng</h3>
+                        <div class="nutrition-row">
+                            <div class="nutrition-item">
+                                <p class="nutrition-name">Chất béo</p>
+                                <p class="nutrition-value" id="modalFat"></p>
+                            </div>
+                            <div class="nutrition-item">
+                                <p class="nutrition-name">Protein</p>
+                                <p class="nutrition-value" id="modalProtein"></p>
+                            </div>
+                            <div class="nutrition-item">
+                                <p class="nutrition-name">Carbs</p>
+                                <p class="nutrition-value" id="modalCarbs"></p>
+                            </div>
+                            <div class="nutrition-item">
+                                <p class="nutrition-name">Chất xơ</p>
+                                <p class="nutrition-value" id="modalFiber"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- thử tự change code ở khúc này nè hehehehe -->
+
+</body>
+</html>
+
