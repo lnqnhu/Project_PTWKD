@@ -844,3 +844,647 @@ footer{
         font-size:40px;
     }
 }
+
+/* ================= ABOUT PAGE ================= */
+
+.about-container{
+    max-width:1300px;
+    margin:auto;
+    padding:180px 80px 100px;
+}
+
+.about-hero h1{
+    font-size:82px;
+    line-height:1.05;
+    font-weight:800;
+    color:#1d1d1d;
+    margin-bottom:35px;
+}
+
+.about-hero h1 span{
+    color:#1db954;
+}
+
+.about-hero p{
+    font-size:22px;
+    color:#666;
+    line-height:1.8;
+    max-width:850px;
+}
+
+.about-grid{
+    display:flex;
+    gap:80px;
+    margin-top:130px;
+    align-items:flex-start;
+}
+
+.about-left{
+    flex:1;
+}
+
+.about-left h2{
+    font-size:56px;
+    line-height:1.1;
+    margin-bottom:35px;
+    color:#1d1d1d;
+}
+
+.about-left p{
+    font-size:20px;
+    line-height:1.9;
+    color:#444;
+    margin-bottom:30px;
+}
+
+.about-box{
+    flex:0.9;
+    background:#ffffff;
+    border:2px solid #dff5e5;
+    padding:45px;
+    border-radius:30px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.05);
+}
+
+.about-box h3{
+    font-size:34px;
+    margin-bottom:35px;
+    color:#1d1d1d;
+}
+
+.about-box ul{
+    list-style:none;
+}
+
+.about-box li{
+    display:flex;
+    gap:18px;
+    margin-bottom:30px;
+    line-height:1.7;
+    color:#333;
+    font-size:19px;
+}
+
+.about-box strong{
+    color:#1db954;
+    min-width:150px;
+    font-size:21px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    .about-container{
+        padding:150px 20px 80px;
+    }
+
+    .about-hero h1{
+        font-size:52px;
+    }
+
+    .about-left h2{
+        font-size:40px;
+    }
+
+    .about-grid{
+        flex-direction:column;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Be Vietnam Pro', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+
+    background:#fff;
+}
+
+/* ================= ABOUT PAGE ================= */
+
+.about-container{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:170px 80px 100px;
+}
+
+/* HERO */
+
+.about-hero{
+
+    margin-bottom:120px;
+}
+
+.about-hero h1{
+
+    font-size:68px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#111;
+
+    max-width:950px;
+
+    margin-bottom:30px;
+
+    letter-spacing:-2px;
+}
+
+.about-hero h1 span{
+
+    color:#1db954;
+}
+
+.about-subtitle{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    max-width:760px;
+}
+
+/* GRID */
+
+.about-grid{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:70px;
+}
+
+/* LEFT */
+
+.about-left{
+
+    flex:1;
+}
+
+.about-left h2{
+
+    font-size:48px;
+
+    line-height:1.15;
+
+    color:#111;
+
+    margin-bottom:35px;
+
+    max-width:600px;
+}
+
+.about-left p{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#555;
+
+    margin-bottom:28px;
+
+    max-width:620px;
+}
+
+/* RIGHT BOX */
+
+.about-box{
+
+    flex:0.9;
+
+    background:#e8f8ee;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:0 5px 20px rgba(29,185,84,0.08);
+}
+
+.about-box h3{
+
+    font-size:30px;
+
+    color:#111;
+
+    margin-bottom:35px;
+}
+
+.about-box ul{
+
+    list-style:none;
+}
+
+.about-box li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+    color:#333;
+
+    line-height:1.7;
+}
+
+.about-box strong{
+
+    color:#1db954;
+
+    min-width:150px;
+
+    font-size:20px;
+
+    font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    .about-container{
+
+        padding:150px 25px 80px;
+    }
+
+    .about-hero h1{
+
+        font-size:48px;
+    }
+
+    .about-subtitle{
+
+        font-size:18px;
+    }
+
+    .about-left h2{
+
+        font-size:38px;
+    }
+
+    .about-grid{
+
+        flex-direction:column;
+    }
+
+    .about-box{
+
+        width:100%;
+    }
+}
+
+@media(max-width:575px){
+
+    .about-hero h1{
+
+        font-size:38px;
+    }
+
+    .about-left h2{
+
+        font-size:30px;
+    }
+
+    .about-left p,
+    .about-box li{
+
+        font-size:17px;
+    }
+}
+
+/* --- Reset CSS & Biến số màu sắc toàn trang --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Đã cập nhật chính xác mã màu xanh neon từ hình ảnh thực tế */
+    --primary-color: #00C957;    /* Màu xanh chuẩn trên app của bạn */
+    --primary-hover: #00A848;    /* Màu xanh đậm hơn một chút khi hover chuột */
+    --text-dark: #111111;        
+    --text-muted: #555555;       
+    --bg-light: #F2FAF5;         /* Nền nhạt pha chút ánh xanh lá nhẹ cực kỳ sạch sẽ */
+    --font-main: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   1. NAVIGATION HEADER
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+header .logo span {
+    color: var(--primary-color);
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover, header nav a.active {
+    color: var(--primary-color);
+}
+
+header .nav-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+header .nav-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   2. ABOUT LAYOUT LAYOUT
+   ========================================== */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+/* HERO SECTION */
+.about-hero {
+    text-align: left;       /* Đổi từ center thành left để căn trái toàn bộ chữ */
+    margin-bottom: 60px;
+    max-width: 800px;       /* Giới hạn độ rộng giúp dòng chữ không bị quá dài trên màn hình máy tính */
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.about-hero h1 span {
+    color: var(--primary-color);
+}
+
+.about-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: justify;    /* Giúp các dòng chữ dàn đều canh lề hai bên cho đẹp */
+}
+
+/* GRID VẤN ĐỀ & CON SỐ */
+.about-grid {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 80px;
+}
+
+.about-left {
+    flex: 1.3;
+}
+
+.about-left h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-left p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* Box con số thực tế */
+.about-box {
+    flex: 1;
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.about-box h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.about-box ul {
+    list-style: none;
+}
+
+.about-box ul li {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+.about-box ul li strong {
+    font-size: 28px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.about-box ul li span {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ==========================================
+   3. TIMELINE SECTION (HÀNH TRÌNH)
+   ========================================== */
+.timeline-section {
+    background-color: var(--bg-light);
+    padding: 50px 40px;
+    border-radius: 24px;
+    margin-bottom: 80px;
+}
+
+.timeline-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 90px;
+}
+
+/* Đường line dọc màu xanh nhạt */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 39px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background-color: rgba(0, 201, 87, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: -90px;
+    top: 0;
+    width: 76px;
+    height: 34px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.timeline-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+/* ==========================================
+   4. VALUES SECTION (GIÁ TRỊ CỐT LÕI)
+   ========================================== */
+.values-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.values-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.value-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.value-icon {
+    font-size: 26px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+/* ==========================================
+   5. RESPONSIVE (MÀN HÌNH ĐIỆN THOẠI)
+   ========================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 4%;
+    }
+    header nav {
+        display: none;
+    }
+    
+    .about-hero h1 {
+        font-size: 30px;
+    }
+    
+    .about-grid, .values-grid {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .timeline {
+        padding-left: 70px;
+    }
+    .timeline::before {
+        left: 29px;
+    }
+    .timeline-badge {
+        left: -70px;
+        width: 60px;
+        height: 30px;
+        font-size: 11px;
+    }
+}
