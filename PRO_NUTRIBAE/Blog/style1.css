@@ -1,0 +1,133 @@
+.blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: white;
+}
+
+.logo {
+    font-size: 64px;
+    font-weight: 800;
+    font-family:'Inter',sans-serif;
+    color: #111;
+    line-height: 1;
+}
+.blog-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-family:'Inter',sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 999px;
+}
+
+.active {
+    background: #2ecc40;
+    color: white;
+}
+.hero {
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.25) 0%, transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 0%, transparent 25%),
+        linear-gradient(
+            135deg,
+            #00d62f 0%,
+            #22c55e 25%,
+            #1fa971 50%,
+            #0d8b72 75%,
+            #087f5b 100%
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(40px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-content p {
+    font-size: 48px;
+    color: black;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+.blog-grid {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+}
+
+.blog-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+}
+
+.blog-card img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.blog-info h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    color: #111;
+}
+
+.blog-info p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.blog-card:hover h2 {
+    color: #22c55e;
+}
