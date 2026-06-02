@@ -39,6 +39,40 @@ window.addEventListener('scroll', () => {
 
 });
 
+// COUNTING ANIMATION CHO HERO STATS
+function animateCounter(element, target, duration = 2000) {
+    let current = 0;
+    const increment = target / (duration / 16);
+    const suffix = element.getAttribute('data-suffix') || '';
+    
+    const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(counter);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, 16);
+}
+
+// Use IntersectionObserver để trigger animation khi element vào view
+document.addEventListener('DOMContentLoaded', () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target, 2000);
+                entry.target.setAttribute('data-animated', 'true');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+});
+
 // MODAL CHI TIẾT SẢN PHẨM
 document.addEventListener('DOMContentLoaded', () => {
     const foodModal = document.getElementById('foodModal');

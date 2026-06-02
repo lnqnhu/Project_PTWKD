@@ -396,13 +396,24 @@ footer{
     overflow:hidden;
     position:relative;
     padding:30px 0;
+    margin-bottom:0px;
     background:linear-gradient(to right,#f7fff9 0%,transparent 5%,transparent 95%,#f7fff9 100%);
     display:flex;
     align-items:center;
 }
 
+.marquee-right{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    padding:30px 0;
+    background:linear-gradient(to left,#f7fff9 0%,transparent 5%,transparent 95%,#f7fff9 100%);
+    display:flex;
+    align-items:center;
+}
+
 /* HÀNG CHẠY */
-.track{
+.marquee-left .track{
     display:flex;
     gap:20px;
     width:max-content;
@@ -410,8 +421,17 @@ footer{
     will-change:transform;
 }
 
+.marquee-right .track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation: marqueeRight 40s linear infinite;
+    will-change:transform;
+}
+
 /* DỪNG KHI RÊ CHUỘT */
-.marquee-left:hover .track{
+.marquee-left:hover .track,
+.marquee-right:hover .track{
     animation-play-state: paused;
 }
 
@@ -473,6 +493,15 @@ footer{
 
 /* ANIMATION - SEAMLESS LOOP */
 @keyframes marqueeLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+@keyframes marqueeRight{
     from{
         transform:translateX(0);
     }
