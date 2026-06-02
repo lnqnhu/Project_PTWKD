@@ -1517,3 +1517,159 @@ header .nav-btn:hover {
         font-size: 11px;
     }
 }
+/* RECIPE PAGE */
+
+.recipe-hero{
+    padding:120px 10%;
+    text-align:center;
+    background:#f4faf4;
+}
+
+.recipe-hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.recipe-hero p{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.recipe-container{
+    width:80%;
+    margin:auto;
+    padding:80px 0;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.recipe-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-8px);
+}
+
+.recipe-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.recipe-card h3{
+    padding:20px 20px 10px;
+}
+
+.recipe-card p{
+    padding:0 20px;
+    color:#666;
+}
+
+.recipe-info{
+    display:flex;
+    justify-content:space-between;
+
+    padding:20px;
+    font-weight:600;
+    color:#22c55e;
+}
+
+.recipe-btn{
+    display:inline-block;
+    margin-top:15px;
+    color:#22c55e;
+    font-weight:600;
+    text-decoration:none;
+}
+.recipe-modal{
+    display:none;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.6);
+
+    z-index:9999;
+}
+
+.recipe-modal-content{
+
+    width:700px;
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    margin:50px auto;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    position:relative;
+}
+
+.recipe-modal-content img{
+
+    width:100%;
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+}
+
+.recipe-close{
+
+    position:absolute;
+
+    top:15px;
+    right:25px;
+
+    font-size:35px;
+
+    cursor:pointer;
+}
+
+.recipe-meta{
+
+    display:flex;
+
+    gap:30px;
+
+    margin:20px 0;
+}
+
+.recipe-detail-btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}

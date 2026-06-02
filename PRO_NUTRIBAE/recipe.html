@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NutriBae Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">
+        Nutri<span>Bae</span>
+    </div>
+
+    <nav>
+        <a href="page.html">Trang chủ</a>
+        <a href="page.html#features">Tính năng</a>
+        <a href="page.html#ai">AI Assistant</a>
+        <a href="page.html#pricing">Gói dịch vụ</a>
+        <a href="page.html#contact">Liên hệ</a>
+    </nav>
+
+    <button class="nav-btn">Get Started</button>
+</header>
+
+<!-- RECIPE HERO -->
+
+<section class="recipe-hero">
+
+    <h1 style="color: #22c55e;">Healthy Recipes</h1>
+
+    <p>
+        Công thức dinh dưỡng được lựa chọn bởi NutriBae giúp bạn ăn ngon,<br></br>
+        giữ dáng và đạt mục tiêu sức khỏe nhanh hơn.
+    </p>
+
+</section>
+
+<!-- RECIPE LIST -->
+
+<section class="recipe-container">
+
+    <div class="recipe-card">
+
+        <img src="images/salmon.jpg">
+
+        <h3>Grilled Salmon</h3>
+
+        <p>
+            Cá hồi nướng giàu Omega-3 giúp hỗ trợ tim mạch và tăng cơ.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 30 phút</span>
+            <span>🔥 236 kcal</span>
+        </div>
+         <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Grilled Salmon',
+        'images/salmon.jpg',
+        '30 phút',
+        '236 kcal',
+        '2 người',
+        '200g cá hồi, 1 quả chanh, dầu olive, salad',
+        'Ướp cá → Nướng 180°C 15 phút → Trang trí salad'
+        )">
+        Xem công thức
+    </button>
+
+
+    </div>
+
+
+    <div class="recipe-card">
+
+        <img src="images/chicken-bowl.jpg">
+
+        <h3>Chicken Bowl</h3>
+
+        <p>
+            Protein cao phù hợp cho người tập gym và tăng cơ.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 25 phút</span>
+            <span>🔥 420 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Chicken Bowl',
+        'images/chicken-bowl.jpg',
+        '25 phút',
+        '420 kcal',
+        '2 người',
+        '200g thịt gà, 1 quả chanh, dầu olive, salad',
+        'Ướp thịt → Nướng 180°C 15 phút → Trang trí salad'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+
+    <div class="recipe-card">
+
+        <img src="images/shake.jpeg">
+
+        <h3>Banana Shake</h3>
+
+        <p>
+            Nhiều vitamin và chất xơ hỗ trợ giảm cân hiệu quả.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 10 phút</span>
+            <span>🔥 180 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Banana Shake',
+        'images/shake.jpeg',
+        '10 phút',
+        '180 kcal',
+        '1 người',
+        '1 quả chuối, 200ml sữa hạt, 1 thìa mật ong, 1 ít đá bào',
+        'Cho tất cả vào máy xay → Xay mịn → Thưởng thức ngay'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/avocado-toast.webp">
+
+        <h3>Avocado Toast</h3>
+
+        <p>
+            Bữa sáng nhanh gọn, đầy năng lượng và chất béo lành mạnh.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 15 phút</span>
+            <span>🔥 250 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Avocado Toast',
+        'images/avocado-toast.webp',
+        '15 phút',
+        '250 kcal',
+        '1 người',
+        '1 lát bánh mì nguyên cám, 1/2 quả bơ, 1 ít tiêu, 1 chút muối, vài lát cà chua',
+        'Nghiền bơ → Quét lên bánh mì nướng → Thêm cà chua và gia vị'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/berry-parfait.webp">
+
+        <h3>Berry Yogurt Parfait</h3>
+
+        <p>
+            Lớp sữa chua và trái cây tươi giúp bổ sung chất chống oxy hóa.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 10 phút</span>
+            <span>🔥 210 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Berry Yogurt Parfait',
+        'images/berry-parfait.webp',
+        '10 phút',
+        '210 kcal',
+        '1 người',
+        '150g sữa chua Hy Lạp, 50g dâu tây, 50g việt quất, 2 thìa yến mạch, 1 thìa mật ong',
+        'Xếp sữa chua và trái cây xen kẽ → Rắc yến mạch → Thêm mật ong'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/quinoa-bowl.webp">
+
+        <h3>Quinoa Veggie Bowl</h3>
+
+        <p>
+            Tô ăn giàu rau củ và protein thực vật, phù hợp cho bữa trưa nhẹ.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 25 phút</span>
+            <span>🔥 320 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Quinoa Veggie Bowl',
+        'images/quinoa-bowl.webp',
+        '25 phút',
+        '320 kcal',
+        '2 người',
+        '100g quinoa, 1/2 quả bí ngòi, 1/2 quả ớt chuông, 1 nắm cải bó xôi, sốt mè',
+        'Luộc quinoa → Xào rau củ → Trộn đều và rưới sốt'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/mango-chicken-salad.webp">
+
+        <h3>Mango Chicken Salad</h3>
+
+        <p>
+            Salad trái cây và gà xé đem lại vị ngọt tự nhiên và protein cân đối.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 20 phút</span>
+            <span>🔥 340 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Mango Chicken Salad',
+        'images/mango-chicken-salad.webp',
+        '20 phút',
+        '340 kcal',
+        '2 người',
+        '100g ức gà, 1/2 quả xoài, 1 nắm xà lách, 1/4 củ hành tây, sốt chanh dây',
+        'Áp chảo gà → Trộn salad và xoài → Chan sốt'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/oatmeal-pancakes.jpg">
+
+        <h3>Oatmeal Pancakes</h3>
+
+        <p>
+            Bánh yến mạch thơm mềm, chọn thêm chuối hoặc mật ong nếu thích.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 15 phút</span>
+            <span>🔥 280 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Oatmeal Pancakes',
+        'images/oatmeal-pancakes.jpg',
+        '15 phút',
+        '280 kcal',
+        '1 người',
+        '50g yến mạch, 1 quả trứng, 100ml sữa hạt, 1/2 quả chuối nghiền',
+        'Trộn bột → Chiên từng chiếc → Thêm trái cây'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/protein-smoothie.jpg">
+
+        <h3>Protein Smoothie</h3>
+
+        <p>
+            Smoothie giàu đạm và chất xơ, phù hợp bữa ăn sau tập luyện.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 8 phút</span>
+            <span>🔥 220 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Protein Smoothie',
+        'images/protein-smoothie.jpg',
+        '8 phút',
+        '220 kcal',
+        '1 người',
+        '1 muỗng bột protein, 1/2 quả chuối, 200ml sữa hạt, 1 thìa bơ đậu phộng',
+        'Cho vào máy xay → Xay nhuyễn → Rót ra cốc'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/Spinach Egg Wrap.webp">
+
+        <h3>Spinach Egg Wrap</h3>
+
+        <p>
+            Cuộn trứng rau chân vịt thơm ngon, giàu sắt và protein.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 12 phút</span>
+            <span>🔥 260 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Spinach Egg Wrap',
+        'images/Spinach Egg Wrap.webp',
+        '12 phút',
+        '260 kcal',
+        '1 người',
+        '2 quả trứng, 1 nắm rau chân vịt, 1 bánh tráng, 1 chút tiêu muối',
+        'Xào rau → Đánh trứng → Rán cuộn và gói bánh'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/berry-oat-smoothie.webp">
+
+        <h3>Berry Oat Smoothie</h3>
+
+        <p>
+            Thức uống trái cây và yến mạch cho năng lượng lâu dài.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 8 phút</span>
+            <span>🔥 230 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Berry Oat Smoothie',
+        'images/berry-oat-smoothie.webp',
+        '8 phút',
+        '230 kcal',
+        '1 người',
+        '100ml sữa hạt, 50g yến mạch, 50g dâu tây, 50g việt quất',
+        'Cho vào máy xay → Xay mịn → Rót ra cốc'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/Sweet Potato Toast.webp">
+
+        <h3>Sweet Potato Toast</h3>
+
+        <p>
+            Bánh mì khoai lang thay thế low-carb, thêm topping sáng tạo.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 20 phút</span>
+            <span>🔥 190 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Sweet Potato Toast',
+        'images/Sweet Potato Toast.webp',
+        '20 phút',
+        '190 kcal',
+        '1 người',
+        '1 củ khoai lang, 1 thìa phô mai, 1 chút hạt chia, rau thơm',
+        'Cắt khoai → Nướng 15 phút → Thêm topping'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/tofu-stir-fry.webp">
+
+        <h3>Tofu Stir Fry</h3>
+
+        <p>
+            Đậu phụ xào rau củ thơm lừng, nguồn protein thực vật lý tưởng.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 18 phút</span>
+            <span>🔥 280 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Tofu Stir Fry',
+        'images/tofu-stir-fry.webp',
+        '18 phút',
+        '280 kcal',
+        '2 người',
+        '150g đậu phụ, 1/2 bông cải xanh, 1/2 quả ớt chuông, nước tương',
+        'Áp chảo đậu phụ → Xào rau củ → Trộn nước sốt'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/citrus-avocado-salad.webp">
+
+        <h3>Citrus Avocado Salad</h3>
+
+        <p>
+            Salad bơ cam tươi mát, cân bằng vitamin và chất béo tốt.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 15 phút</span>
+            <span>🔥 200 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Citrus Avocado Salad',
+        'images/citrus-avocado-salad.webp',
+        '15 phút',
+        '200 kcal',
+        '1 người',
+        '1/2 quả bơ, 1 quả cam, 1 nắm xà lách, 1 ít hạt óc chó, sốt mật ong',
+        'Gọt cam → Trộn cùng bơ và xà lách → Chan sốt'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/greek-chickpea-bowl.webp">
+
+        <h3>Greek Chickpea Bowl</h3>
+
+        <p>
+            Bát gà tây Địa Trung Hải đầy đủ đạm thực vật và rau củ.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 20 phút</span>
+            <span>🔥 330 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Greek Chickpea Bowl',
+        'images/greek-chickpea-bowl.webp',
+        '20 phút',
+        '330 kcal',
+        '2 người',
+        '100g đậu gà, 1/2 quả dưa chuột, 1/4 củ hành tây, 50g phô mai feta, sốt chanh',
+        'Trộn đậu gà với rau → Thêm phô mai → Chan sốt'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/salmon-lettuce-roll.webp">
+
+        <h3>Salmon Lettuce Roll</h3>
+
+        <p>
+            Cuộn lá xà lách cá hồi nhẹ nhàng, thơm ngon và ít carb.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 15 phút</span>
+            <span>🔥 240 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Salmon Lettuce Roll',
+        'images/salmon-lettuce-roll.webp',
+        '15 phút',
+        '240 kcal',
+        '2 người',
+        '100g cá hồi xông khói, 4 lá xà lách, 1/4 quả bơ, 1 chút chanh',
+        'Xếp cá hồi vào lá → Thêm bơ và chanh → Cuộn lại'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/apple-cinnamon-yogurt.webp">
+
+        <h3>Apple Cinnamon Yogurt</h3>
+
+        <p>
+            Sữa chua táo quế thơm ngọt, bữa phụ nhẹ nhàng giàu probiotic.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 10 phút</span>
+            <span>🔥 190 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Apple Cinnamon Yogurt',
+        'images/apple-cinnamon-yogurt.webp',
+        '10 phút',
+        '190 kcal',
+        '1 người',
+        '150g sữa chua, 1/2 quả táo, 1/2 thìa cà phê quế, 1 thìa hạt hạnh nhân băm',
+        'Cắt táo → Trộn vào sữa chua → Rắc quế và hạnh nhân'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/turmeric-cauliflower-rice.webp">
+
+        <h3>Turmeric Cauliflower Rice</h3>
+
+        <p>
+            Cơm súp lơ nghệ nhẹ nhàng, phù hợp khi muốn giảm tinh bột.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 18 phút</span>
+            <span>🔥 160 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Turmeric Cauliflower Rice',
+        'images/turmeric-cauliflower-rice.webp',
+        '18 phút',
+        '160 kcal',
+        '2 người',
+        '200g súp lơ, 1/2 thìa cà phê bột nghệ, 1 thìa dầu olive, hành tây',
+        'Băm súp lơ → Xào hành tây → Thêm nghệ và đảo đều'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+    <div class="recipe-card">
+
+        <img src="images/almond-date-energy-balls.webp">
+
+        <h3>Almond Date Energy Balls</h3>
+
+        <p>
+            Viên năng lượng hạt và chà là ngọt tự nhiên, bữa phụ tiện lợi.
+        </p>
+
+        <div class="recipe-info">
+            <span>⏱ 12 phút</span>
+            <span>🔥 210 kcal</span>
+        </div>
+        <button
+        class="recipe-detail-btn"
+        onclick="openRecipe(
+        'Almond Date Energy Balls',
+        'images/almond-date-energy-balls.webp',
+        '12 phút',
+        '210 kcal',
+        '6 viên',
+        '80g hạt hạnh nhân, 80g chà là, 1 thìa dầu dừa, 1 thìa bột cacao',
+        'Xay nhuyễn → Vo viên → Làm lạnh'
+        )">
+        Xem công thức
+    </button>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        Nutri<span>Bae</span>
+    </div>
+
+    <p>
+        "Ăn ngon, dáng chuẩn, có Bae lo"
+    </p>
+
+    <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 NutriBae. All Rights Reserved.
+    </p>
+
+</footer>
+    <div id="recipeModal" class="recipe-modal">
+
+        <div class="recipe-modal-content">
+
+            <span class="recipe-close" onclick="closeRecipe()">
+                &times;
+            </span>
+
+            <img id="recipeImg">
+
+            <h2 id="recipeName"></h2>
+
+            <div class="recipe-meta">
+
+                <p><strong>⏱ Thời gian:</strong>
+                    <span id="recipeTime"></span>
+                </p>
+
+                <p><strong>🔥 Calories:</strong>
+                    <span id="recipeCal"></span>
+                </p>
+
+                <p><strong>🍽 Khẩu phần:</strong>
+                 <span id="recipeServing"></span>
+                </p>
+
+            </div>
+
+            <h3>Nguyên liệu</h3>
+
+            <p id="recipeIngredients"></p>
+
+            <h3>Cách chế biến</h3>
+
+            <p id="recipeSteps"></p>
+
+    </div>
+
+    </div>
+</body>
+</html>
+<script src="recipe.js"></script>
