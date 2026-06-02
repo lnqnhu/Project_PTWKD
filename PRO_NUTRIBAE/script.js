@@ -144,3 +144,62 @@ faqItems.forEach(item => {
     });
 
 });
+
+//chatbot
+window.onload = function(){
+
+    const chatbox =
+    document.getElementById("chatbox");
+
+    document
+    .getElementById("chat-toggle")
+    .onclick = function(){
+
+        chatbox.style.display = "flex";
+    };
+
+    document
+    .getElementById("close-chat")
+    .onclick = function(){
+
+        chatbox.style.display = "none";
+    };
+}
+function sendMessage(){
+
+    let input =
+    document.getElementById("userInput");
+
+    let message = input.value;
+
+    if(message.trim() === "")
+        return;
+
+    let chat =
+    document.getElementById("chat-messages");
+
+
+    chat.innerHTML +=
+    `
+    <div class="user-message">
+        ${message}
+    </div>
+    `;
+
+    input.value="";
+
+
+    setTimeout(()=>{
+
+        chat.innerHTML +=
+        `
+        <div class="bot-message">
+            Tôi đang xử lý...
+        </div>
+        `;
+
+        chat.scrollTop =
+        chat.scrollHeight;
+
+    },500);
+}
