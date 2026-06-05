@@ -37,7 +37,8 @@
     color: white;
 }*/
 body{
-    padding-top:100px;
+    padding-top:80px;
+     background:#f5f5f2;
 }
 .hero {
     height: 360px;
@@ -137,11 +138,14 @@ body{
 /* ================= HEADER (LẤY TỪ TRANG CHÍNH) ================= */
 
 header{
+    left:0;
+    right:0;
     width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 80px;
+    padding:15px 60px;
+    height:80px; 
     position:fixed;
     background:white;
     top:0;
@@ -272,10 +276,10 @@ footer{
     box-sizing:border-box;
     font-family:'Inter',sans-serif;
 }
-.blog-article {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
+.blog-article{
+    max-width:1400px;
+    margin:60px auto;
+    padding:0 60px;
 }
 
 .blog-article img {
@@ -284,13 +288,124 @@ footer{
     margin-bottom: 40px;
 }
 
-.blog-article h1 {
+/*.blog-article h1 {
     font-size: 60px;
     margin-bottom: 30px;
-}
+}*/
 
 .blog-article p {
     font-size: 22px;
     line-height: 1.8;
     color: #333;
+}
+/* ===== ARTICLE HEADER ===== */
+
+.article-header{
+    max-width:1400px;
+    margin:80px auto;
+    padding:0 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+}
+
+.article-text{
+    flex:1;
+    min-width:0;
+}
+
+.article-text h1{
+    font-size:48px;
+    line-height:1.25;
+    color:#22c55e;
+    margin-bottom:30px;
+    font-weight:800;
+    font-family:'Inter',sans-serif;
+}
+
+.article-text p{
+    font-size:28px;
+    line-height:1.8;
+    color:#111;
+    font-family:'Inter',sans-serif;
+}
+.article-content{
+    max-width:900px;
+    margin:100px auto;
+    padding:0 20px;
+}
+
+.article-content h2{
+    font-size:72px;
+    font-weight:400;
+    line-height:1.15;
+    color:#111;
+    margin-bottom:40px;
+}
+
+.article-content h3{
+    font-size:56px;
+    font-weight:400;
+    line-height:1.2;
+    color:#111;
+    margin-top:120px;
+    margin-bottom:40px;
+}
+
+.article-content p{
+    font-size:24px;
+    line-height:1.8;
+    color:#222;
+    margin-bottom:40px;
+    font-weight:400;
+}
+.article-content ul{
+    margin:40px 0;
+    padding-left:40px;
+}
+
+.article-content li{
+    font-size:24px;
+    line-height:1.9;
+    color:#111;
+    margin-bottom:10px;
+}
+
+.article-content strong{
+    font-weight:700;
+    color:#000;
+}
+
+/* ===== CIRCLE INFO ===== */
+
+.article-meta{
+    position:relative;
+    width:280px;
+    height:280px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:#fafafa;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:35px;
+    padding-left:65px;
+    box-shadow:
+        0 0 0 50px rgba(255,255,255,.7),
+        0 0 0 100px rgba(255,255,255,.4);
+}
+
+.meta-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:22px;
+    color:#111;
+}
+
+.meta-item i{
+    color:#22c55e;
+    font-size:26px;
 }
