@@ -1,38 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Health Information</title>
+    <meta charset="UTF-8">
+    <title>NutriBae Health Setup</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="form-container">
 
-    <h1>Tell Us About Yourself</h1>
+    <h1>Health Setup</h1>
 
-    <form action="goal.html">
+    <form id="healthSetupForm">
 
-        <input type="number" placeholder="Age">
+        <select id="goal" required>
+            <option value="">Chọn mục tiêu</option>
+            <option value="lose_weight">Giảm cân</option>
+            <option value="maintain">Giữ cân</option>
+            <option value="gain_weight">Tăng cân</option>
+            <option value="gain_muscle">Tăng cơ</option>
+        </select>
 
-        <input type="number" placeholder="Height (cm)">
+        <select id="gender" required>
+            <option value="">Giới tính</option>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+        </select>
 
-        <input type="number" placeholder="Weight (kg)">
+        <input 
+            type="number" 
+            id="age" 
+            placeholder="Tuổi" 
+            required
+            min="0"
+        >
 
-        <select>
+        <input 
+            type="number" 
+            id="height" 
+            placeholder="Chiều cao cm" 
+            required
+            min="0"
+        >
 
-            <option>Male</option>
+        <input 
+            type="number" 
+            id="weight" 
+            placeholder="Cân nặng kg" 
+            required
+            min="0"
+        >
 
-            <option>Female</option>
-
+        <select id="activityLevel" required>
+            <option value="">Mức độ vận động</option>
+            <option value="sedentary">Ít vận động</option>
+            <option value="light">Vận động nhẹ</option>
+            <option value="moderate">Vận động vừa</option>
+            <option value="active">Vận động nhiều</option>
         </select>
 
         <button type="submit">
-            Continue
+            Finish Setup
         </button>
 
     </form>
 
 </div>
+
+<script src="health-setup.js"></script>
 
 </body>
 </html>

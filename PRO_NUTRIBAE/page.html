@@ -55,10 +55,66 @@
                 giám sát macro và nhận được những gợi ý dinh dưỡng được hỗ trợ bởi AI
                 dựa trên các mục tiêu thể dục.
             </p>
+<!--PROFILE CÁ NHÂN HIỂN THỊ KHI ĐĂNG NHẬP THÀNH CÔNG-->
+            
+            <div id="userProfileBox" class="user-profile-box" style="display: none;">
+    <div class="profile-header">
+        <div>
+            <p class="profile-label">HỒ SƠ DINH DƯỠNG CỦA BẠN</p>
+            <h2>Xin chào, <span id="profileName">Bae</span> 👋</h2>
+        </div>
 
+        <button id="logoutBtn" class="logout-btn">Đăng xuất</button>
+    </div>
+
+    <div class="profile-grid">
+        <div class="profile-card">
+            <p>Mục tiêu</p>
+            <h3 id="profileGoal">--</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Cân nặng</p>
+            <h3><span id="profileWeight">--</span> kg</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Chiều cao</p>
+            <h3><span id="profileHeight">--</span> cm</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Tuổi</p>
+            <h3><span id="profileAge">--</span></h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Calo mục tiêu</p>
+            <h3><span id="profileCalories">--</span> kcal</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Protein</p>
+            <h3><span id="profileProtein">--</span> g</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Carbs</p>
+            <h3><span id="profileCarbs">--</span> g</h3>
+        </div>
+
+        <div class="profile-card">
+            <p>Fat</p>
+            <h3><span id="profileFat">--</span> g</h3>
+        </div>
+    </div>
+</div>
             <div class="hero-buttons">
-                <a href="register.html" class="primary-btn" style="text-decoration: none;">Bắt đầu ngay</a>
-                <button class="secondary-btn">Khám phá tính năng</button>
+            <a href="register.html" class="primary-btn" style="text-decoration: none;">Bắt đầu ngay</a>
+            <button class="secondary-btn" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">
+            Khám phá tính năng
+            </button>
+
             </div>
 
             <div class="hero-stats">
@@ -671,7 +727,7 @@
 
 </footer>
     <script src="script.js"></script>
-
+    <script src="page-auth.js"></script>
     <!-- MODAL CHI TIẾT SẢN PHẨM -->
     <div id="foodModal" class="food-modal">
         <div class="modal-content">

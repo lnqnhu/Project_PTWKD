@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
     <title>NutriBae Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,23 +11,50 @@
 
     <h1>Create Account</h1>
 
-    <form action="health-setup.html">
+    <form id="registerForm">
 
-        <input type="text" placeholder="Full Name" required>
+        <input 
+            type="text" 
+            id="fullName"
+            placeholder="Full Name" 
+            required
+        >
 
-        <input type="email" placeholder="Email" required>
+        <input 
+            type="email" 
+            id="email"
+            placeholder="Email" 
+            required
+        >
 
-        <input type="password" placeholder="Password" required>
+        <input 
+            type="password" 
+            id="password"
+            placeholder="Password" 
+            required
+        >
 
-        <input type="password" placeholder="Confirm Password" required>
+        <input 
+            type="password" 
+            id="confirmPassword"
+            placeholder="Confirm Password" 
+            required
+        >
 
         <button type="submit">
             Continue
         </button>
 
+        <p style="margin-top: 15px; text-align: center;">
+            Already have an account?
+            <a href="login.html" style="color:#1db954;">Login</a>
+        </p>
+
     </form>
 
 </div>
+
+<script src="register.js"></script>
 
 </body>
 </html>

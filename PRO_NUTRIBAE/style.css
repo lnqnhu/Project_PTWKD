@@ -1843,3 +1843,112 @@ header .nav-btn:hover {
 
     cursor:pointer;
 }
+/* ===== FIX USER PROFILE BOX ON HOME PAGE ===== */
+
+.user-profile-box {
+    margin-top: 28px;
+    margin-bottom: 32px;
+    max-width: 720px;
+    background: white;
+    border: 2px solid #e8f5e9;
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: 0 8px 30px rgba(29, 185, 84, 0.12);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.profile-label {
+    color: #1db954;
+    font-weight: 800;
+    font-size: 12px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.profile-header h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.logout-btn {
+    border: none;
+    background: #f1f5f2;
+    color: #1d1d1d;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.logout-btn:hover {
+    background: #e0f5e7;
+}
+
+/* Quan trọng: đổi từ 4 cột thành 2 cột để không bị bóp chữ */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.profile-card {
+    background: #f7fff9;
+    border: 1px solid #dff5e5;
+    border-radius: 18px;
+    padding: 16px 18px;
+    min-height: 105px;
+}
+
+.profile-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.profile-card h3 {
+    color: #1db954;
+    font-size: 25px;
+    line-height: 1.25;
+    margin: 0;
+    word-break: normal;
+}
+
+/* Không cho số và đơn vị bị tách dòng */
+.profile-card h3 span {
+    white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+    .user-profile-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-header {
+        align-items: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-header h2 {
+        font-size: 24px;
+    }
+}
