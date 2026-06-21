@@ -287,7 +287,7 @@ app.get("/api/me", requireAuth, async (req, res) => {
         });
     }
 });
-
+app.use('/api/chat', require('./chatRoutes'));
 // ================= START SERVER =================
 
 async function startServer() {
@@ -313,3 +313,4 @@ async function startServer() {
 }
 
 startServer();
+
