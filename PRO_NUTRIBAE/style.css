@@ -1952,3 +1952,8 @@ header .nav-btn:hover {
         font-size: 24px;
     }
 }
+.card-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

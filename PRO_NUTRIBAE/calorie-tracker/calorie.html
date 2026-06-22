@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>NutriBae - Theo Dõi Calo</title>
+
+    <link rel="stylesheet" href="calorie.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+            <div class="logo">
+                Nutri<span>Bae</span>
+            </div>
+
+            <nav>
+                <a href="../page.html">Trang chủ</a>
+                <a href="../page.html#features">Tính năng</a>
+                <a href="../page.html#ai">Trợ lý AI</a>
+                <a href="../page.html#pricing">Bảng giá</a>
+                <a href="../page.html#contact">Liên hệ</a>
+            </nav>
+            <a href="../Blog/Blog.html" class="blog-link">
+                Blog
+            </a>
+            <a href="../register.html" class="nav-btn" style="text-decoration: none;">
+                Bắt đầu
+            </a>
+        </header>
+
+
+   <section class="calorie-hero">
+
+    <span class="hero-badge">
+        NUTRITION TRACKER
+    </span>
+
+    <h1>
+        Theo Dõi Calo
+        <span>& Dinh Dưỡng</span>
+    </h1>
+
+    <p>
+        Tính toán BMI, TDEE và nhu cầu dinh dưỡng phù hợp
+        với mục tiêu sức khỏe của bạn.
+    </p>
+
+</section>
+
+<div class="dashboard">
+
+    <div class="form-panel">
+
+        <h2>Thông tin cá nhân</h2>
+
+        <div class="form-box">
+
+            <select id="goal">
+                <option value="lose">Giảm cân</option>
+                <option value="maintain">Duy trì cân nặng</option>
+                <option value="gain">Tăng cân</option>
+                <option value="muscle">Tăng cơ</option>
+            </select>
+
+            <input type="number" id="weight" placeholder="Cân nặng (kg)">
+
+            <input type="number" id="height" placeholder="Chiều cao (cm)">
+
+            <input type="number" id="age" placeholder="Tuổi">
+
+            <select id="gender">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+            </select>
+
+            <select id="activity">
+                <option value="1.2">Ít vận động</option>
+                <option value="1.375">Vận động nhẹ</option>
+                <option value="1.55">Vận động vừa</option>
+                <option value="1.725">Vận động nhiều</option>
+                <option value="1.9">Rất nhiều</option>
+            </select>
+
+            <button onclick="calculateNutrition()">
+                Tính toán dinh dưỡng
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="chart-panel">
+
+        <h2>Phân bố dinh dưỡng</h2>
+
+        <canvas id="macroChart"></canvas>
+
+    </div>
+
+</div>
+
+<div class="results">
+
+    <div class="result-card">
+        <h3>BMI</h3>
+        <p id="bmiResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>TDEE</h3>
+        <p id="tdeeResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>Calo mục tiêu</h3>
+        <p id="calorieResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>Protein</h3>
+        <p id="proteinResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>Carbs</h3>
+        <p id="carbResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>Fat</h3>
+        <p id="fatResult">--</p>
+    </div>
+
+    <div class="result-card">
+        <h3>Đường tối đa</h3>
+        <p id="sugarResult">--</p>
+    </div>
+
+</div>
+
+    <canvas id="macroChart"></canvas>
+
+</div>
+
+<script src="calorie.js"></script>
+<footer id="contact">
+
+    <div class="footer-logo">
+        Nutri<span>Bae</span>
+    </div>
+
+    <p>"Ăn ngon, dáng chuẩn, có Bae lo"</p>
+
+    <div class="company-footer">
+        <h3>CÔNG TY</h3>
+
+        <a href="../aboutnutriBae.html">Về NutriBae</a>
+        <a href="../PrivacyPolicy.pdf" target="_blank">Chính sách bảo mật</a>
+        <a href="../TermsOfUse.pdf" target="_blank">Điều khoản sử dụng</a>
+        <a href="mailto:nutribae.team@gmail.com">Liên hệ</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+        <a href="#">Support</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 NutriBae. All Rights Reserved.
+    </p>
+
+</footer>
+</body>
+</html>
