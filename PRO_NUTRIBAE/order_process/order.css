@@ -1,0 +1,383 @@
+/* ==========================================================
+   order.css — dùng kèm style.css
+   ========================================================== */
+
+:root{
+    --nb-green:#1db954;
+    --nb-green-dark:#169c46;
+    --nb-bg:#f7fff9;
+    --nb-text:#1d1d1d;
+    --nb-muted:#666;
+    --nb-card:#ffffff;
+    --nb-border:#e7f3ea;
+    --nb-radius-lg:30px;
+    --nb-radius-md:20px;
+    --nb-radius-sm:14px;
+    --nb-shadow:0 5px 25px rgba(29,185,84,0.08);
+    --nb-shadow-hover:0 10px 30px rgba(29,185,84,0.18);
+}
+
+body{ background:var(--nb-bg); }
+
+/* ---------- HEADER CART BUTTON ---------- */
+.cart-btn{
+    position:relative; border:none; background:var(--nb-green); color:#fff;
+    width:44px; height:44px; border-radius:50%; font-size:18px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 14px rgba(29,185,84,0.3); transition:transform .2s ease;
+}
+.cart-btn:hover{ transform:scale(1.06); }
+.cart-badge{
+    position:absolute; top:-5px; right:-5px; background:#ff5757; color:#fff;
+    font-size:10px; font-weight:700; min-width:18px; height:18px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; padding:0 3px;
+}
+
+/* ---------- ORDER HERO ---------- */
+.order-hero{
+    padding:130px 80px 60px; text-align:center; max-width:860px; margin:0 auto;
+}
+.order-hero .tag{ color:var(--nb-green); font-weight:700; margin-bottom:14px; letter-spacing:.5px; }
+.order-hero h1{ font-size:42px; line-height:1.2; margin-bottom:18px; }
+.order-hero h1 span{ color:var(--nb-green); }
+.order-hero-text{ color:var(--nb-white); font-size:16px; line-height:1.7; margin-bottom:28px; }
+.order-hero-actions{ display:flex; gap:16px; justify-content:center; }
+.order-hero-actions a{ text-decoration:none; }
+
+/* ---------- SHARED SECTION ---------- */
+.mealplan-section,.menu-section,.tracking-section{
+    padding:50px 60px 80px; max-width:1280px; margin:0 auto;
+}
+.section-description{ color:var(--nb-muted); max-width:580px; margin:10px auto 0; font-size:14px; }
+
+/* ================= MEAL PLAN ================= */
+.mealplan-section{
+    background:linear-gradient(180deg,#eafff1 0%, var(--nb-bg) 100%);
+    border-radius:40px;
+}
+.plan-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:44px; }
+.plan-card{
+    background:var(--nb-card); border-radius:var(--nb-radius-md); padding:32px 26px;
+    box-shadow:var(--nb-shadow); text-align:center; position:relative;
+    border:2px solid transparent; transition:transform .25s ease, box-shadow .25s ease;
+}
+.plan-card:hover{ transform:translateY(-6px); box-shadow:var(--nb-shadow-hover); }
+.plan-card.popular{ border-color:var(--nb-green); }
+.plan-badge{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--nb-green); color:#fff; font-size:11px; font-weight:700;
+    padding:5px 14px; border-radius:20px; white-space:nowrap;
+}
+.plan-card h3{ font-size:22px; margin:6px 0; }
+.plan-card .plan-days{ color:var(--nb-green); font-weight:700; font-size:13px; letter-spacing:.5px; margin-bottom:12px; }
+.plan-card .plan-price{ font-size:28px; font-weight:800; margin:12px 0 16px; }
+.plan-card .plan-price small{ font-size:13px; font-weight:500; color:var(--nb-muted); }
+.plan-card ul{ list-style:none; text-align:left; margin-bottom:22px; color:#444; font-size:13px; line-height:2; }
+.plan-card ul li::before{ content:"✓ "; color:var(--nb-green); font-weight:700; }
+.plan-card button{ width:100%; border:none; background:var(--nb-green); color:#fff; padding:13px; border-radius:28px; font-weight:700; font-size:14px; cursor:pointer; transition:background .2s; }
+.plan-card button:hover{ background:var(--nb-green-dark); }
+.plan-suggest-cta{
+    margin-top:44px; background:var(--nb-card); border-radius:var(--nb-radius-md);
+    padding:26px 36px; display:flex; align-items:center; justify-content:space-between;
+    gap:26px; box-shadow:var(--nb-shadow); flex-wrap:wrap;
+}
+.plan-suggest-text h3{ margin-bottom:5px; font-size:17px; }
+.plan-suggest-text p{ color:var(--nb-muted); font-size:13px; }
+.plan-suggest-cta button{ white-space:nowrap; border:none; }
+
+/* ================= CATEGORY ROW ================= */
+.category-row{
+    display:flex; gap:14px; overflow-x:auto; padding:44px 4px 18px; scrollbar-width:thin;
+}
+.category-pill{
+    flex:0 0 auto; display:flex; flex-direction:column; align-items:center;
+    gap:8px; cursor:pointer; padding:5px; border:none; background:transparent;
+}
+.category-pill .pill-icon{
+    width:66px; height:66px; border-radius:50%; background:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+    box-shadow:var(--nb-shadow); border:2px solid transparent; transition:all .2s;
+}
+.category-pill span.pill-label{ font-size:12px; font-weight:600; color:#444; white-space:nowrap; }
+.category-pill.active .pill-icon{ border-color:var(--nb-green); background:#eafff1; }
+.category-pill.active span.pill-label{ color:var(--nb-green); }
+
+/* ================= FOOD GRID (với ảnh thật) ================= */
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+    margin-top:18px;
+}
+
+.food-item-card{
+    background:var(--nb-card); border-radius:var(--nb-radius-md); overflow:hidden;
+    box-shadow:0 4px 15px rgba(29,185,84,0.08); transition:transform .2s, box-shadow .2s;
+    display:flex; flex-direction:column; cursor:pointer;
+    border:2px solid transparent;
+}
+.food-item-card:hover{
+    transform:translateY(-5px); box-shadow:0 10px 28px rgba(29,185,84,0.18);
+    border-color:var(--nb-border);
+}
+
+/* Wrapper ảnh */
+.food-visual-wrap{
+    position:relative; width:100%; height:160px; overflow:hidden; flex-shrink:0;
+}
+.food-visual-img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .3s ease;
+}
+.food-item-card:hover .food-visual-img{ transform:scale(1.06); }
+.food-visual-emoji{
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:52px;
+}
+/* badge danh mục góc trên phải */
+.food-cat-badge{
+    position:absolute; top:10px; right:10px;
+    background:rgba(255,255,255,0.88); border-radius:50%;
+    width:32px; height:32px; display:flex; align-items:center; justify-content:center;
+    font-size:16px; backdrop-filter:blur(4px);
+}
+
+/* Nội dung card */
+.food-info{ padding:14px 16px 18px; display:flex; flex-direction:column; flex:1; }
+.food-item-card h4{ font-size:14px; font-weight:700; margin-bottom:6px; line-height:1.4; }
+.food-cal-tag{
+    display:inline-block; background:#eafff1; color:var(--nb-green-dark);
+    font-size:11px; font-weight:700; padding:3px 9px; border-radius:10px;
+    margin-bottom:7px; width:fit-content;
+}
+.food-desc{ color:var(--nb-muted); font-size:12px; line-height:1.5; margin-bottom:10px; flex:1; }
+
+/* Mini macros row */
+.food-macros-mini{
+    display:flex; gap:8px; margin-bottom:12px;
+}
+.food-macros-mini span{
+    font-size:11px; color:#555; background:#f5f5f5; padding:3px 7px;
+    border-radius:8px; font-weight:600;
+}
+
+.food-bottom-row{ display:flex; align-items:center; justify-content:space-between; }
+.food-price{ font-weight:800; font-size:15px; color:var(--nb-text); }
+.food-actions{ display:flex; gap:6px; align-items:center; }
+.food-detail-btn{
+    border:none; background:#f0f0f0; padding:7px 9px; border-radius:10px;
+    font-size:14px; cursor:pointer; transition:background .2s;
+}
+.food-detail-btn:hover{ background:#e8f5e9; }
+.add-to-cart-btn{
+    border:none; background:var(--nb-green); color:#fff; padding:8px 13px;
+    border-radius:18px; font-size:12px; font-weight:700; cursor:pointer; transition:background .2s;
+    white-space:nowrap;
+}
+.add-to-cart-btn:hover{ background:var(--nb-green-dark); }
+
+/* ================= FOOD DETAIL MODAL ================= */
+.food-detail-modal{
+    position:fixed; inset:0; background:rgba(0,0,0,.5);
+    z-index:2500; display:flex; align-items:center; justify-content:center;
+    padding:20px; opacity:0; visibility:hidden; transition:opacity .25s ease;
+}
+.food-detail-modal.active{ opacity:1; visibility:visible; }
+
+.fdm-content{
+    background:#fff; border-radius:var(--nb-radius-lg);
+    width:100%; max-width:560px; max-height:90vh;
+    overflow-y:auto; position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+    animation:fdmSlideUp .3s ease;
+}
+@keyframes fdmSlideUp{
+    from{ transform:translateY(30px); opacity:0; }
+    to{ transform:translateY(0); opacity:1; }
+}
+
+.fdm-close{
+    position:absolute; top:14px; right:16px; z-index:10;
+    border:none; background:rgba(255,255,255,.9); color:#333;
+    width:34px; height:34px; border-radius:50%; font-size:20px;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.15); transition:background .2s;
+}
+.fdm-close:hover{ background:#fff; }
+
+/* Hero ảnh + overlay */
+.fdm-hero{ position:relative; height:240px; overflow:hidden; border-radius:var(--nb-radius-lg) var(--nb-radius-lg) 0 0; }
+.fdm-img{ width:100%; height:100%; object-fit:cover; }
+.fdm-img-placeholder{
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:80px;
+}
+.fdm-hero-overlay{
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.7));
+    padding:20px 22px 18px; color:#fff;
+}
+.fdm-category{ font-size:11px; font-weight:700; letter-spacing:1px; opacity:.85; text-transform:uppercase; }
+.fdm-name{ font-size:22px; font-weight:800; margin:4px 0 8px; line-height:1.25; }
+.fdm-meta-row{ display:flex; gap:16px; font-size:13px; opacity:.9; }
+
+/* Body */
+.fdm-body{ padding:22px 26px 28px; }
+.fdm-desc{ color:#555; font-size:14px; line-height:1.6; margin-bottom:22px; }
+
+/* Macro cards */
+.fdm-macros{ margin-bottom:22px; }
+.fdm-macros h4{ font-size:14px; font-weight:700; margin-bottom:12px; color:#333; }
+.fdm-macro-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:10px;
+}
+.fdm-macro-card{
+    background:#f8f8f8; border-radius:12px; padding:12px 10px; text-align:center;
+}
+.fdm-macro-card.protein{ background:#fff3f0; }
+.fdm-macro-card.carbs  { background:#fff9e6; }
+.fdm-macro-card.fat    { background:#f0f8ff; }
+.fdm-macro-card.fiber  { background:#f0fff4; }
+.macro-label{ font-size:11px; color:#888; font-weight:600; margin-bottom:4px; }
+.macro-value{ font-size:18px; font-weight:800; color:#1d1d1d; margin-bottom:6px; }
+.macro-bar-bg{ height:4px; background:#e0e0e0; border-radius:4px; overflow:hidden; margin-bottom:4px; }
+.macro-bar{ height:100%; border-radius:4px; background:var(--nb-green); }
+.fdm-macro-card.protein .macro-bar{ background:#ff6b6b; }
+.fdm-macro-card.carbs   .macro-bar{ background:#ffc107; }
+.fdm-macro-card.fat     .macro-bar{ background:#4da6ff; }
+.macro-pct{ font-size:10px; color:#aaa; }
+
+/* Sections (nguyên liệu, cách làm) */
+.fdm-section{ margin-bottom:18px; }
+.fdm-section h4{ font-size:14px; font-weight:700; color:#333; margin-bottom:8px; }
+.fdm-section p{ font-size:13px; color:#555; line-height:1.7; }
+
+/* Action row */
+.fdm-actions{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-top:22px; padding-top:18px; border-top:1px solid var(--nb-border);
+    gap:14px;
+}
+.fdm-price{ font-size:22px; font-weight:800; color:var(--nb-green); white-space:nowrap; }
+.fdm-add-btn{ border:none; flex:1; font-size:14px; padding:13px 18px; }
+
+/* ================= CART DRAWER ================= */
+.drawer-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.35); opacity:0;
+    visibility:hidden; transition:opacity .25s; z-index:1400;
+}
+.drawer-overlay.active{ opacity:1; visibility:visible; }
+.cart-drawer{
+    position:fixed; top:0; right:-420px; width:390px; max-width:92vw;
+    height:100%; background:#fff; box-shadow:-10px 0 40px rgba(0,0,0,.12);
+    z-index:1500; display:flex; flex-direction:column; transition:right .3s ease;
+}
+.cart-drawer.open{ right:0; }
+.cart-drawer-header{ display:flex; justify-content:space-between; align-items:center; padding:22px 24px; border-bottom:1px solid var(--nb-border); }
+.cart-drawer-header h3{ font-size:18px; }
+.drawer-close{ border:none; background:none; font-size:24px; cursor:pointer; color:#888; }
+.cart-items{ flex:1; overflow-y:auto; padding:16px 24px; }
+.cart-empty{ color:var(--nb-muted); text-align:center; margin-top:36px; font-size:13px; }
+.cart-item{ display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--nb-border); }
+.cart-item .cart-item-icon{ width:50px; height:50px; border-radius:12px; background:#eafff1; display:flex; align-items:center; justify-content:center; font-size:22px; flex:0 0 auto; }
+.cart-item-info{ flex:1; }
+.cart-item-info h5{ font-size:13px; margin-bottom:3px; }
+.cart-item-info .cart-item-meta{ color:var(--nb-muted); font-size:11px; margin-bottom:6px; }
+.cart-item-controls{ display:flex; align-items:center; gap:8px; }
+.qty-btn{ width:22px; height:22px; border-radius:50%; border:1px solid #ddd; background:#fff; cursor:pointer; font-size:12px; line-height:1; }
+.cart-item-price{ font-weight:700; font-size:12px; margin-left:auto; }
+.cart-item-remove{ border:none; background:none; color:#ff5757; font-size:11px; cursor:pointer; margin-left:6px; }
+.cart-footer{ padding:18px 24px 24px; border-top:1px solid var(--nb-border); }
+.cart-total-row{ display:flex; justify-content:space-between; font-size:16px; font-weight:700; margin-bottom:14px; }
+.cart-checkout-btn{ width:100%; border:none; }
+.cart-checkout-btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+/* ================= MODALS (suggest / checkout) ================= */
+.suggest-modal-content,.checkout-modal-content{
+    max-width:540px; width:92%; text-align:left; padding:36px;
+    border-radius:var(--nb-radius-lg); background:#fff; max-height:88vh; overflow-y:auto;
+}
+.suggest-modal-content h2,.checkout-modal-content h2{ font-size:22px; margin-bottom:7px; }
+.modal-sub{ color:var(--nb-muted); font-size:13px; margin-bottom:22px; }
+.suggest-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-group{ margin-bottom:14px; }
+.form-group label{ display:block; font-size:12px; font-weight:600; margin-bottom:5px; color:#333; }
+.form-group input,.form-group select{ width:100%; padding:11px 13px; border:1px solid #ddd; border-radius:11px; font-size:13px; font-family:inherit; }
+.form-group input:focus,.form-group select:focus{ outline:none; border-color:var(--nb-green); }
+.suggest-submit-btn{ width:100%; border:none; margin-top:6px; }
+.suggest-result{ margin-top:24px; background:#eafff1; border-radius:var(--nb-radius-sm); padding:22px; }
+.suggest-result h4{ color:var(--nb-green-dark); margin-bottom:9px; }
+.suggest-result .suggest-stats{ display:flex; gap:14px; margin:12px 0; flex-wrap:wrap; }
+.suggest-result .suggest-stat{ background:#fff; padding:9px 14px; border-radius:10px; font-size:12px; }
+.suggest-result .suggest-stat b{ display:block; font-size:16px; }
+.suggest-result-note{ font-size:12px; color:#444; margin-bottom:14px; line-height:1.6; }
+.suggest-add-btn{ border:none; background:var(--nb-green); color:#fff; padding:11px 20px; border-radius:22px; font-weight:700; cursor:pointer; }
+.checkout-summary{ background:#f7fff9; border-radius:var(--nb-radius-sm); padding:14px 16px; font-size:13px; color:#444; margin:5px 0 16px; max-height:150px; overflow-y:auto; }
+.checkout-summary-row{ display:flex; justify-content:space-between; padding:3px 0; }
+.checkout-summary-total{ border-top:1px dashed #ccc; margin-top:7px; padding-top:7px; font-weight:700; color:var(--nb-text); }
+
+/* ================= TRACKING ================= */
+.tracking-card{ background:#fff; border-radius:var(--nb-radius-md); box-shadow:var(--nb-shadow); padding:36px; margin-top:36px; }
+.tracking-info{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:32px; font-size:13px; }
+.tracking-info .ti-block p{ color:var(--nb-muted); font-size:11px; margin-bottom:3px; }
+.tracking-info .ti-block h4{ font-size:14px; }
+.tracking-timeline{ display:flex; justify-content:space-between; position:relative; margin:0 10px 28px; }
+.tracking-timeline::before{ content:""; position:absolute; top:18px; left:5%; right:5%; height:3px; background:#e2e2e2; z-index:0; }
+.timeline-step{ position:relative; z-index:1; flex:1; text-align:center; }
+.timeline-dot{ width:36px; height:36px; border-radius:50%; background:#e2e2e2; color:#888; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto 9px; transition:all .3s; }
+.timeline-step.active .timeline-dot{ background:var(--nb-green); color:#fff; box-shadow:0 0 0 6px rgba(29,185,84,0.15); }
+.timeline-step.done .timeline-dot{ background:var(--nb-green-dark); color:#fff; }
+.timeline-label{ font-size:12px; font-weight:600; color:#888; }
+.timeline-step.active .timeline-label,.timeline-step.done .timeline-label{ color:var(--nb-text); }
+.tracking-demo-note{ font-size:11px; color:var(--nb-muted); margin-top:12px; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:1200px){
+    .food-grid{ grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:960px){
+    .order-hero{ padding:130px 30px 50px; }
+    .mealplan-section,.menu-section,.tracking-section{ padding:44px 30px 60px; }
+    .plan-grid{ grid-template-columns:1fr; }
+    .food-grid{ grid-template-columns:repeat(2,1fr); }
+    .tracking-info{ grid-template-columns:1fr 1fr; }
+    .fdm-macro-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:580px){
+    .order-hero h1{ font-size:30px; }
+    .food-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
+    .plan-suggest-cta{ flex-direction:column; text-align:center; }
+    .suggest-form .form-row{ grid-template-columns:1fr; }
+    .tracking-info{ grid-template-columns:1fr; }
+    .cart-drawer{ width:100%; }
+    .fdm-hero{ height:200px; }
+    .fdm-name{ font-size:18px; }
+    .fdm-macro-grid{ grid-template-columns:repeat(2,1fr); }
+    .food-visual-wrap{ height:140px; }
+}
+.order-hero {
+    position: relative;
+    background: url('/images/food.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.order-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.6),   /* tối ở trên */
+        rgba(0,0,0,0.2)    /* nhạt dần xuống dưới */
+    );
+    z-index: 1;
+}
+
+.order-hero * {
+    position: relative;
+    z-index: 2;
+}
+.order-hero-textbox {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}

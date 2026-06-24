@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             localStorage.setItem("nutribae_token", data.token);
 
-            window.location.href = "page.html";
+            window.location.href = "/page.html";
         } catch (err) {
             console.error(err);
             alert("Không thể kết nối server");

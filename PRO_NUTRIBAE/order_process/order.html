@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đặt món & Meal Plan - NutriBae</title>
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="order.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Nutri<span>Bae</span></div>
+    <nav>
+        <a href="../page.html">Trang chủ</a>
+        <a href="#mealplan">Meal Plan</a>
+        <a href="#menu">Đặt món lẻ</a>
+        <a href="#tracking" id="navTracking" style="display:none;">Đơn hàng của tôi</a>
+    </nav>
+    <button id="cartOpenBtn" class="cart-btn" aria-label="Giỏ hàng">
+        🛒
+        <span id="cartBadge" class="cart-badge" style="display:none;">0</span>
+    </button>
+</header>
+
+<!-- ORDER HERO -->
+<section class="order-hero" id="top">
+    <p class="tag">ĂN ĐÚNG BỮA – ĐÚNG CALO – ĐÚNG MỤC TIÊU</p>
+    <h1>Đặt đồ ăn dinh dưỡng <span>theo cách của bạn</span></h1>
+    <p class="order-hero-text">
+        Chọn gói Meal Plan được cá nhân hoá bởi chuyên gia dinh dưỡng NutriBae,
+        hoặc đặt nhanh từng món lành mạnh theo danh mục yêu thích của bạn.
+    </p>
+    <div class="order-hero-actions">
+        <a href="#mealplan" class="primary-btn">Xem Meal Plan</a>
+        <a href="#menu" class="secondary-btn">Đặt món lẻ</a>
+    </div>
+</section>
+
+<!-- MEAL PLAN -->
+<section class="mealplan-section" id="mealplan">
+    <div class="section-title">
+        <p>TÍNH NĂNG CHÍNH CỦA NUTRIBAE</p>
+        <h2>Chọn gói Meal Plan phù hợp với bạn</h2>
+        <p class="section-description">Mỗi gói được đội ngũ dinh dưỡng NutriBae xây dựng thực đơn cá nhân hoá dựa trên chỉ số cơ thể và mục tiêu sức khoẻ của bạn.</p>
+    </div>
+    <div class="plan-grid" id="planGrid"></div>
+    <div class="plan-suggest-cta">
+        <div class="plan-suggest-text">
+            <h3>Chưa biết nên chọn gói nào?</h3>
+            <p>Nhập chiều cao, cân nặng và mục tiêu — NutriBae sẽ gợi ý gói phù hợp nhất cho bạn.</p>
+        </div>
+        <button class="primary-btn" id="openSuggestBtn">Để NutriBae gợi ý cho tôi</button>
+    </div>
+</section>
+
+<!-- MENU MÓN LẺ -->
+<section class="menu-section" id="menu">
+    <div class="section-title">
+        <p>MÓN ĂN LÀNH MẠNH</p>
+        <h2>Đặt món lẻ theo danh mục</h2>
+        <p class="section-description">Click vào món để xem chi tiết dinh dưỡng, nguyên liệu và cách chế biến.</p>
+    </div>
+    <div class="category-row" id="categoryRow"></div>
+    <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<!-- ORDER TRACKING -->
+<section class="tracking-section" id="tracking" style="display:none;">
+    <div class="section-title">
+        <p>ĐƠN HÀNG CỦA BẠN</p>
+        <h2>Theo dõi tiến trình đơn hàng</h2>
+    </div>
+    <div class="tracking-card">
+        <div class="tracking-info" id="trackingInfo"></div>
+        <div class="tracking-timeline" id="trackingTimeline">
+            <div class="timeline-step" data-step="confirmed"><div class="timeline-dot">1</div><p class="timeline-label">Đã xác nhận</p></div>
+            <div class="timeline-step" data-step="preparing"><div class="timeline-dot">2</div><p class="timeline-label">Đang chuẩn bị</p></div>
+            <div class="timeline-step" data-step="delivering"><div class="timeline-dot">3</div><p class="timeline-label">Đang giao</p></div>
+            <div class="timeline-step" data-step="done"><div class="timeline-dot">4</div><p class="timeline-label">Hoàn thành</p></div>
+        </div>
+        <button class="secondary-btn" id="demoAdvanceBtn">Demo: cập nhật trạng thái tiếp theo →</button>
+        <p class="tracking-demo-note">* Nút trên chỉ để demo giao diện. Khi triển khai thật, trạng thái sẽ được cập nhật tự động từ hệ thống bếp / vận chuyển hoặc trang quản trị NutriBae.</p>
+    </div>
+</section>
+
+<!-- CART DRAWER -->
+<div id="cartOverlay" class="drawer-overlay"></div>
+<aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+        <h3>Giỏ hàng của bạn</h3>
+        <button id="cartCloseBtn" class="drawer-close">&times;</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+        <p class="cart-empty">Giỏ hàng đang trống. Hãy chọn một món hoặc gói Meal Plan nhé!</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total-row">
+            <span>Tổng cộng</span>
+            <span id="cartTotal">0đ</span>
+        </div>
+        <button id="checkoutBtn" class="primary-btn cart-checkout-btn" disabled>Tiến hành thanh toán</button>
+    </div>
+</aside>
+
+<!-- FOOD DETAIL MODAL (được render bằng JS) -->
+<div id="foodDetailModal" class="food-detail-modal"></div>
+
+<!-- MEAL PLAN SUGGEST MODAL -->
+<div id="suggestModal" class="food-modal">
+    <div class="modal-content suggest-modal-content">
+        <button class="modal-close" data-close="suggestModal">&times;</button>
+        <h2>Gợi ý gói Meal Plan dành cho bạn</h2>
+        <p class="modal-sub">Thông tin này giúp đội dinh dưỡng NutriBae xây dựng thực đơn riêng cho bạn.</p>
+        <form id="suggestForm" class="suggest-form">
+            <div class="form-row">
+                <div class="form-group"><label>Chiều cao (cm)</label><input type="number" name="height" required min="100" max="250" placeholder="VD: 165"></div>
+                <div class="form-group"><label>Tuổi</label><input type="number" name="age" required min="10" max="100" placeholder="VD: 24"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Cân nặng hiện tại (kg)</label><input type="number" name="currentWeight" required min="30" max="200" placeholder="VD: 60"></div>
+                <div class="form-group"><label>Cân nặng mong muốn (kg)</label><input type="number" name="desiredWeight" required min="30" max="200" placeholder="VD: 55"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Giới tính</label><select name="gender"><option value="female">Nữ</option><option value="male">Nam</option></select></div>
+                <div class="form-group"><label>Mức độ vận động</label><select name="activityLevel"><option value="sedentary">Ít vận động</option><option value="light">Vận động nhẹ</option><option value="moderate" selected>Vận động vừa</option><option value="active">Vận động nhiều</option></select></div>
+            </div>
+            <div class="form-group"><label>Mục tiêu sức khoẻ</label><select name="goal"><option value="lose_weight">Giảm mỡ</option><option value="gain_weight">Tăng cân</option><option value="gain_muscle">Tăng cơ</option><option value="maintain">Duy trì cân nặng</option><option value="eat_clean">Eat clean</option></select></div>
+            <button type="submit" class="primary-btn suggest-submit-btn">Tính toán & gợi ý gói</button>
+        </form>
+        <div id="suggestResult" class="suggest-result" style="display:none;"></div>
+    </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="food-modal">
+    <div class="modal-content checkout-modal-content">
+        <button class="modal-close" data-close="checkoutModal">&times;</button>
+        <h2>Thông tin giao hàng</h2>
+        <p class="modal-sub">Đơn hàng sẽ được tạo ngay sau khi bạn xác nhận.</p>
+        <form id="checkoutForm" class="suggest-form">
+            <div class="form-group"><label>Họ và tên</label><input type="text" name="fullName" required placeholder="Nguyễn Văn A"></div>
+            <div class="form-row">
+                <div class="form-group"><label>Số điện thoại</label><input type="tel" name="phone" required placeholder="09xxxxxxxx"></div>
+                <div class="form-group"><label>Phương thức thanh toán</label><select name="paymentMethod"><option value="cod">Thanh toán khi nhận hàng (COD)</option><option value="bank_transfer">Chuyển khoản ngân hàng</option><option value="ewallet">Ví điện tử (Momo / ZaloPay)</option></select></div>
+            </div>
+            <div class="form-group"><label>Địa chỉ giao hàng</label><input type="text" name="address" required placeholder="Số nhà, đường, quận, thành phố"></div>
+            <div class="checkout-summary" id="checkoutSummary"></div>
+            <button type="submit" class="primary-btn suggest-submit-btn">Xác nhận đặt hàng</button>
+        </form>
+    </div>
+</div>
+
+<!-- CHATBOT -->
+<div id="chat-toggle">💬</div>
+<div id="chatbox">
+    <div class="chat-header">NutriBae AI<span id="close-chat">✖</span></div>
+    <div class="chat-body" id="chat-messages">
+        <div class="bot-message">Xin chào 👋 Tôi là NutriBae AI. Cần tư vấn món hay Meal Plan, hỏi tôi nhé!</div>
+    </div>
+    <div class="chat-footer">
+        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+        <button id="uploadBtn" onclick="document.getElementById('imageUpload').click()" title="Gửi ảnh bữa ăn">📷</button>
+        <input type="text" id="userInput" placeholder="Nhập tin nhắn hoặc gửi ảnh...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+    <script src="../chatbot/chat.js"></script>
+</div>
+
+<script src="order.js"></script>
+</body>
+</html>

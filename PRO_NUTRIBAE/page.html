@@ -23,14 +23,18 @@
         <nav>
             <a href="#home">Trang chủ</a>
             <a href="#features">Tính năng</a>
+            <a href="#pricing">Meal Plan</a>
             <a href="#ai">Trợ lý AI</a>
-            <a href="#pricing">Bảng giá</a>
+            
             <a href="#contact">Liên hệ</a>
         </nav>
         <a href="Blog/Blog.html" class="blog-link">
             Blog
         </a>
-        <a href="register.html" class="nav-btn" style="text-decoration: none;">
+        <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">
+         Đặt đồ ăn ngay!
+        </a>
+        <a href="login_process/register.html" class="nav-btn" style="text-decoration: none;">
         Bắt đầu
         </a>
     </header>
@@ -110,7 +114,8 @@
     </div>
 </div>
             <div class="hero-buttons">
-            <a href="register.html" class="primary-btn" style="text-decoration: none;">Bắt đầu ngay</a>
+            <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">Đặt đồ ăn ngay!</a>
+            <a href="/login_process/register.html" class="primary-btn" style="text-decoration: none;">Bắt đầu</a>
             <button class="secondary-btn" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">
             Khám phá tính năng
             </button>
@@ -137,7 +142,67 @@
         </div>
 
         <div class="hero-right">
-            <img src="images/nutribae.jpg" alt="NutriBae App">
+            <img src="images/nutribae.jpg" alt="NutriBae App" style="width:500px; height:auto;">
+        </div>
+        
+        
+    </section>
+    <section class="info-bar">
+    <div class="info-item">
+       
+        <strong>50K+</strong>
+        <span>người dùng</span>
+    </div>
+
+    <div class="info-item">
+        
+        <strong>1200+</strong>
+        <span>món ăn dinh dưỡng</span>
+    </div>
+
+    <div class="info-item">
+        
+        <strong>AI</strong>
+        <span>theo dõi thông minh</span>
+    </div>
+
+    <div class="info-item">
+        
+        <strong>95%</strong>
+        <span>khách hàng hài lòng</span>
+    </div>
+</section>
+    <section class="ai-section" id="ai">
+
+        <div class="ai-left">
+            <img src="/images/shipper.jpg" style="width:500px; height:auto;">
+        </div>
+    
+        <div class="ai-right">
+
+            <p class="tag">BẠN ĐỒNG HÀNH VỀ SỨC KHỎE</p>
+
+            <h2>
+                Meal Plan cá nhân hóa – Giải pháp dinh dưỡng toàn diện
+            </h2>
+
+            <p>
+                NutriBae mang đến cho bạn trải nghiệm đặt đồ ăn thông minh với Meal
+                 Plan được thiết kế riêng theo mục tiêu sức khỏe. Chỉ cần nhập chiều cao, cân nặng hiện tại, cân nặng mong muốn và mục tiêu (tăng cân, tăng cơ, giảm mỡ, duy trì cân nặng hoặc eat clean), hệ thống sẽ tính toán nhu cầu dinh dưỡng cơ bản và gợi ý 
+                gói Meal Plan phù hợp: 7 ngày, 14 ngày hoặc 30 ngày.
+            </p>
+
+            <ul>
+                <li>✔ Gói Meal Plan nổi bật, dễ chọn lựa</li>
+                <li>✔ Đặt cá món ăn lẻ nhanh chóng </li>
+                <li>✔ Theo dõi dinh dưỡng dễ dàng</li>
+                <li>✔ Thực đơn cá nhân hóa theo mục tiêu</li>
+            </ul>
+
+            <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">
+         Đặt đồ ăn ngay!
+        </a>
+
         </div>
 
     </section>
@@ -435,13 +500,15 @@
             </div>
             </a>
 
-            <div class="card">
-                <div class="icon">🤖</div>
-                <h3>Khuyến nghị AI</h3>
-                <p>
-                    Những gợi ý bữa ăn được cá nhân hóa dựa trên mục tiêu thể dục và lối sống.
-                </p>
-            </div>
+          <a href="#" class="card-link" onclick="openChatBox(event)">
+    <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Khuyến nghị AI</h3>
+        <p>
+            Những gợi ý bữa ăn được cá nhân hóa dựa trên mục tiêu thể dục và lối sống.
+        </p>
+    </div>
+</a>
 
             <div class="card">
                 <div class="icon">📷</div>
@@ -451,14 +518,7 @@
                 </p>
             </div>
 
-            <div class="card">
-                <div class="icon">💪</div>
-                <h3>Theo dõi Macro</h3>
-                <p>
-                    Theo dõi protein, carbs và chất béo để hỗ trợ tăng cơ bắp hoặc giảm cân.
-                </p>
-            </div>
-
+        
             <div class="card">
                 <div class="icon">⏰</div>
                 <h3>Nhắc nhở thông minh</h3>
@@ -466,17 +526,90 @@
                     Nhận nhắc nhở về nước uống, bữa ăn và thói quen lành mạnh.
                 </p>
             </div>
+            <a href="recipe/recipe.html"  class="card-link">
             <div class="card">
-            <div class="icon">🍲</div>
+            <div class="icon"></div>
             <h3>Công thức lành mạnh</h3>
             <p>
                 Khám phá hàng trăm công thức món ăn lành mạnh phù hợp với mục tiêu dinh dưỡng.
             </p>
 
-            <a href="recipe.html" class="recipe-btn">
-                 Xem công thức →
-            </a>
+            
+
 </div>
+
+        </div>
+        </a>
+
+    </section>
+
+
+    <!-- MEAL PLAN / PRICING SECTION -->
+
+    <section class="pricing" id="pricing">
+
+        <div class="section-title">
+            <p>GÓI MEAL PLAN</p>
+            <h2>Chọn gói Meal Plan phù hợp với bạn</h2>
+            <p class="section-description">
+                Mỗi gói được đội ngũ dinh dưỡng NutriBae xây dựng thực đơn cá nhân hoá dựa trên
+                chỉ số cơ thể và mục tiêu sức khoẻ của bạn.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <p class="plan-tag">7 NGÀY</p>
+                <h3>Meal Plan 7 ngày</h3>
+                <h1>990.000đ<span class="plan-unit">/ gói</span></h1>
+
+                <ul>
+                    <li>✔ 3 bữa/ngày theo thực đơn cá nhân hoá</li>
+                    <li>✔ Tư vấn 1-1 với chuyên gia dinh dưỡng</li>
+                    <li>✔ Giao hàng tận nơi mỗi ngày</li>
+                    <li>✔ Phù hợp để bắt đầu / dùng thử</li>
+                </ul>
+
+                <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">
+                    Chọn gói ngay!
+                </a>
+            </div>
+
+            <div class="price-card premium">
+                <span class="popular">Phổ biến nhất</span>
+                <p class="plan-tag">14 NGÀY</p>
+                <h3>Meal Plan 14 ngày</h3>
+                <h1>1.850.000đ<span class="plan-unit">/ gói</span></h1>
+
+                <ul>
+                    <li>✔ 3 bữa/ngày + 1 snack lành mạnh</li>
+                    <li>✔ Theo dõi & điều chỉnh thực đơn giữa kỳ</li>
+                    <li>✔ Tư vấn dinh dưỡng không giới hạn</li>
+                    <li>✔ Miễn phí giao hàng toàn bộ gói</li>
+                </ul>
+
+                <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">
+                    Chọn gói ngay!
+                </a>
+            </div>
+
+            <div class="price-card">
+                <p class="plan-tag">30 NGÀY</p>
+                <h3>Meal Plan 30 ngày</h3>
+                <h1>3.500.000đ<span class="plan-unit">/ gói</span></h1>
+
+                <ul>
+                    <li>✔ 3 bữa/ngày + 1 snack lành mạnh</li>
+                    <li>✔ Báo cáo tiến độ cân nặng hàng tuần</li>
+                    <li>✔ Ưu tiên hỗ trợ từ chuyên gia</li>
+                    <li>✔ Tiết kiệm nhất / phù hợp mục tiêu dài hạn</li>
+                </ul>
+
+                <a href="order_process/order.html" class="nav-btn" style="text-decoration: none;">
+                    Chọn gói ngay!
+                </a>
+            </div>
 
         </div>
 
@@ -488,7 +621,7 @@
     <section class="ai-section" id="ai">
 
         <div class="ai-left">
-            <img src="/PRO_NUTRIBAE/images/food.webp" alt="Healthy Food">
+            <img src="/images/food.webp" alt="Healthy Food">
         </div>
 
         <div class="ai-right">
@@ -513,70 +646,6 @@
             </ul>
 
             <button class="primary-btn">Thử Trợ lý AI</button>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRICING -->
-
-    <section class="pricing" id="pricing">
-
-        <div class="section-title">
-            <p>GÓI ĐĂNG KÝ</p>
-            <h2>Chọn hành trình sức khỏe của bạn</h2>
-        </div>
-
-        <div class="pricing-grid">
-
-            <div class="price-card">
-                <h3>Cơ bản</h3>
-                <h1>$0</h1>
-                <p>Miễn phí mãi mãi</p>
-
-                <ul>
-                    <li>✔ Đặt hàng thực phẩm</li>
-                    <li>✔ Theo dõi calo cơ bản</li>
-                    <li>✔ Lịch sử bữa ăn</li>
-                </ul>
-
-                <button>Bắt đầu</button>
-            </div>
-
-
-            <div class="price-card premium">
-                <div class="popular">PHỔ BIẾN NHẤT</div>
-
-                <h3>Premium</h3>
-                <h1>$9</h1>
-                <p>Mỗi tháng</p>
-
-                <ul>
-                    <li>✔ Khuyến cáo bữa ăn AI</li>
-                    <li>✔ Quét thực phẩm thông minh</li>
-                    <li>✔ Theo dõi Macro</li>
-                    <li>✔ Kế hoạch bữa ăn được cá nhân hóa</li>
-                </ul>
-
-                <button>Tham gia Premium</button>
-            </div>
-
-
-            <div class="price-card">
-                <h3>Fitness Pro</h3>
-                <h1>$19</h1>
-                <p>Mỗi tháng</p>
-
-                <ul>
-                    <li>✔ Tất cả các tính năng của Premium</li>
-                    <li>✔ Tích hợp phòng tập</li>
-                    <li>✔ Phân tích nâng cao</li>
-                    <li>✔ Hướng dẫn dinh dưỡng</li>
-                </ul>
-
-                <button>Nâng cấp</button>
-            </div>
 
         </div>
 
@@ -708,9 +777,9 @@
     <div class="company-footer">
         <h3>CÔNG TY</h3>
 
-        <a href="/aboutnutriBae.html">Về NutriBae</a>
-        <a href="PrivacyPolicy.pdf" target="_blank">Chính sách bảo mật</a>
-        <a href="TermsOfUse.pdf" target="_blank">Điều khoản sử dụng</a>
+        <a href="/about/aboutnutriBae.html">Về NutriBae</a>
+        <a href="about/PrivacyPolicy.pdf" target="_blank">Chính sách bảo mật</a>
+        <a href="about/TermsOfUse.pdf" target="_blank">Điều khoản sử dụng</a>
         <a href="mailto:nutribae.team@gmail.com">Liên hệ</a>
     </div>
 
@@ -814,9 +883,8 @@
             ➤
         </button>
     </div>
-    <script src="chat.js"></script>
+    <script src="chatbot/chat.js"></script>
 
 </div>
 </body>
 </html>
-

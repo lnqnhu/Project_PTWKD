@@ -85,3 +85,11 @@ function appendMessage(sender, text) {
     
     return msgId;
 }
+function openChatBox(e) {
+    if (e) e.preventDefault(); // chặn hành vi mặc định của link
+    document.getElementById("chatbox").style.display = "block";
+}
+
+document.getElementById("close-chat").onclick = function() {
+    document.getElementById("chatbox").style.display = "none";
+};

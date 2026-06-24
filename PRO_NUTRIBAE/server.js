@@ -21,8 +21,22 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Cho phép mở HTML/CSS/JS trong thư mục PRO_NUTRIBAE
-app.use(express.static(__dirname));
+// ================= STATIC FILES =================
+// Serve toàn bộ thư mục PRO_NUTRIBAE (bao gồm các thư mục con:
+// about/, Blog/, calorie-tracker/, chatbot/, images/, login_process/, recipe/)
+// Express tự map đường dẫn vật lý -> URL tương ứng, ví dụ:
+//   PRO_NUTRIBAE/recipe/recipe.html        -> http://localhost:3000/recipe/recipe.html
+//   PRO_NUTRIBAE/calorie-tracker/calorie.css -> http://localhost:3000/calorie-tracker/calorie.css
+//   PRO_NUTRIBAE/images/...                -> http://localhost:3000/images/...
+app.use(
+    express.static(__dirname, {
+        // Không serve các file/folder nhạy cảm hoặc không cần thiết qua HTTP
+        dotfiles: "ignore" // .env sẽ luôn bị bỏ qua (mặc định của express)
+    })
+);
+
+// Chặn truy cập trực tiếp vào node_modules qua HTTP (an toàn + nhẹ hơn)
+app.use("/node_modules", (req, res) => res.status(404).end());
 
 // ================= USER MODEL =================
 
@@ -153,11 +167,38 @@ function calculateNutrition(profile) {
     };
 }
 
-// ================= ROUTES =================
+// ================= PAGE ROUTES (clean URLs) =================
+// Cho phép truy cập trang chính không cần gõ tên file .html đầy đủ.
+// Nếu bạn không cần URL rút gọn, có thể bỏ phần này — static ở trên
+// đã đủ để truy cập file qua đường dẫn đầy đủ (vd: /recipe/recipe.html).
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "page.html"));
 });
+
+app.get("/recipe", (req, res) => {
+    res.sendFile(path.join(__dirname, "recipe", "recipe.html"));
+});
+
+app.get("/calorie-tracker", (req, res) => {
+    res.sendFile(path.join(__dirname, "calorie-tracker", "calorie.html"));
+});
+
+app.get("/order", (req, res) => {
+    res.sendFile(path.join(__dirname, "order_process", "order.html"));
+});
+
+// Bổ sung route cho about/, Blog/, login_process/ nếu các thư mục này
+// có file .html chính (đổi tên file cho khớp với thực tế của bạn):
+// app.get("/about", (req, res) => {
+//     res.sendFile(path.join(__dirname, "about", "about.html"));
+// });
+// app.get("/blog", (req, res) => {
+//     res.sendFile(path.join(__dirname, "Blog", "blog.html"));
+// });
+// app.get("/login", (req, res) => {
+//     res.sendFile(path.join(__dirname, "login_process", "login.html"));
+// });
 
 app.get("/api/health", (req, res) => {
     res.json({
@@ -287,7 +328,11 @@ app.get("/api/me", requireAuth, async (req, res) => {
         });
     }
 });
-app.use('/api/chat', require('./chatRoutes'));
+
+// ================= CHAT ROUTES =================
+// chatRoutes.js nằm tại: PRO_NUTRIBAE/chatbot/chatRoutes.js
+app.use("/api/chat", require("./chatbot/chatRoutes"));
+
 // ================= START SERVER =================
 
 async function startServer() {
@@ -313,4 +358,3 @@ async function startServer() {
 }
 
 startServer();
-
