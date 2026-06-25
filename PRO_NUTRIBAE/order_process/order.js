@@ -51,13 +51,79 @@
         },
         {
             id: "f4", category: "bowls",
-            name: "Bát quinoa rau củ", cal: 320, price: 52000,
+            name: "Bowl quinoa rau củ", cal: 320, price: 52000,
             image: "/images/quinoa-bowl.webp", icon: "🌿",
             desc: "Quinoa, rau củ theo mùa, hạt bí, sốt chanh dây.",
             protein: 14, carbs: 46, fat: 8, fiber: 7,
             time: "25 phút", serving: "2 người",
             ingredients: "100g quinoa, 1/2 bí ngòi, 1/2 ớt chuông, cải bó xôi, sốt mè rang",
             steps: "Luộc quinoa → Xào rau củ → Trộn đều và rưới sốt mè"
+        },
+        {
+            id: "f28", category: "bowls",
+            name: "Bowl bò áp chảo rau củ",
+            cal: 510, price: 72000,
+            image: "/images/beef-bowl.jpg", icon: "🥩",
+            desc: "Bò áp chảo cùng rau củ và gạo lứt giàu protein.",
+            protein: 40, carbs: 45, fat: 16, fiber: 5,
+            time: "20 phút", serving: "1 người",
+            ingredients: "180g thịt bò, 150g gạo lứt, bông cải xanh, cà rốt, dầu olive",
+            steps: "Áp chảo bò 3 phút mỗi mặt → Luộc gạo lứt → Hấp rau củ → Xếp tô và thưởng thức"
+        },
+        {
+            id: "f29", category: "bowls",
+            name: "Bowl tôm quinoa",
+            cal: 450, price: 70000,
+            image: "/images/shrimp-bowl.jpg", icon: "🍤",
+            desc: "Tôm áp chảo cùng quinoa và rau xanh.",
+            protein: 35, carbs: 42, fat: 10, fiber: 4,
+            time: "18 phút", serving: "1 người",
+            ingredients: "200g tôm, 100g quinoa, xà lách, cà chua bi, dầu olive",
+            steps: "Nấu quinoa → Áp chảo tôm → Trộn rau xanh → Xếp tô và rưới sốt"
+        },
+        {
+            id: "f30", category: "bowls",
+            name: "Bowl gà pesto",
+            cal: 490, price: 68000,
+            image: "/images/pesto-bowl.jpg", icon: "🍗",
+            desc: "Ức gà nướng sốt pesto ăn kèm rau củ.",
+            protein: 39, carbs: 46, fat: 14, fiber: 5,
+            time: "20 phút", serving: "1 người",
+            ingredients: "200g ức gà, sốt pesto, bí ngòi, cà chua bi, gạo lứt",
+            steps: "Nướng gà → Luộc gạo lứt → Xào rau củ → Trộn cùng sốt pesto"
+        },
+        {
+            id: "f31", category: "bowls",
+            name: "Bowl cá ngừ avocado",
+            cal: 470, price: 73000,
+            image: "/images/tuna-bowl.jpg", icon: "🐟",
+            desc: "Cá ngừ tươi kết hợp bơ và rau xanh.",
+            protein: 38, carbs: 35, fat: 18, fiber: 6,
+            time: "15 phút", serving: "1 người",
+            ingredients: "150g cá ngừ, 1/2 quả bơ, rau xà lách, cà chua bi",
+            steps: "Áp chảo cá ngừ → Cắt bơ → Trộn rau → Xếp tô và rưới sốt chanh"
+        },
+        {
+            id: "f32", category: "bowls",
+            name: "Bowl thịt viên healthy",
+            cal: 520, price: 69000,
+            image: "/images/meatball-bowl.jpg", icon: "🍖",
+            desc: "Thịt viên ít béo cùng cơm gạo lứt và rau củ.",
+            protein: 37, carbs: 48, fat: 15, fiber: 5,
+            time: "22 phút", serving: "1 người",
+            ingredients: "200g thịt bò xay, gạo lứt, bông cải xanh, cà rốt",
+            steps: "Nặn thịt viên → Nướng chín → Luộc gạo lứt → Ăn kèm rau củ"
+        },
+        {
+            id: "f33", category: "bowls",
+            name: "Bowl đậu hũ nướng",
+            cal: 390, price: 58000,
+            image: "/images/tofu-bowl.jpg", icon: "🌱",
+            desc: "Đậu hũ nướng cùng rau xanh và quinoa.",
+            protein: 20, carbs: 40, fat: 10, fiber: 8,
+            time: "18 phút", serving: "1 người",
+            ingredients: "200g đậu hũ, 80g quinoa, cải bó xôi, cà chua bi",
+            steps: "Nướng đậu hũ → Nấu quinoa → Trộn rau xanh → Xếp tô"
         },
 
         /* ---- SALAD ---- */
@@ -101,6 +167,72 @@
             ingredients: "80g quinoa, rau củ theo mùa, hạt bí ngô, sốt chanh dây olive",
             steps: "Nấu quinoa để nguội → Thái rau củ → Trộn đều, rưới sốt, rắc hạt bí"
         },
+        {
+            id: "f34", category: "salad",
+            name: "Salad cá hồi xông khói",
+            cal: 320, price: 65000,
+            image: "/images/smoked-salmon-salad.jpg", icon: "🐟",
+            desc: "Cá hồi xông khói, rau xanh và sốt chanh dầu olive.",
+            protein: 28, carbs: 12, fat: 15, fiber: 3,
+            time: "15 phút", serving: "1 người",
+            ingredients: "100g cá hồi xông khói, xà lách romaine, cà chua bi, dầu olive, chanh",
+            steps: "Rửa rau → Xếp cá hồi lên trên → Rưới dầu olive và nước cốt chanh"
+        },
+        {
+            id: "f35", category: "salad",
+            name: "Salad Hy Lạp",
+            cal: 270, price: 50000,
+            image: "/images/greek-salad.jpg", icon: "🧀",
+            desc: "Phô mai feta, olive đen và rau củ tươi.",
+            protein: 10, carbs: 18, fat: 14, fiber: 4,
+            time: "10 phút", serving: "1 người",
+            ingredients: "Phô mai feta, cà chua, dưa leo, olive đen, hành tím",
+            steps: "Cắt nhỏ rau củ → Trộn đều → Thêm feta và olive → Rưới sốt"
+        },
+        {
+            id: "f36", category: "salad",
+            name: "Salad tôm bơ",
+            cal: 290, price: 58000,
+            image: "/images/shrimp-avocado-salad.jpg", icon: "🍤",
+            desc: "Tôm áp chảo và bơ tươi giàu chất béo tốt.",
+            protein: 24, carbs: 10, fat: 16, fiber: 4,
+            time: "15 phút", serving: "1 người",
+            ingredients: "150g tôm, 1/2 quả bơ, xà lách, cà chua bi",
+            steps: "Áp chảo tôm → Cắt bơ → Trộn rau → Xếp topping và rưới sốt"
+        },
+        {
+            id: "f37", category: "salad",
+            name: "Salad trứng luộc rau xanh",
+            cal: 260, price: 45000,
+            image: "/images/egg-salad.jpg", icon: "🥚",
+            desc: "Trứng luộc kết hợp rau xanh và sốt mè rang.",
+            protein: 18, carbs: 12, fat: 14, fiber: 3,
+            time: "12 phút", serving: "1 người",
+            ingredients: "2 quả trứng, xà lách, dưa leo, sốt mè rang",
+            steps: "Luộc trứng → Cắt đôi → Trộn rau → Chan sốt mè rang"
+        },
+        {
+            id: "f38", category: "salad",
+            name: "Salad Caesar Healthy",
+            cal: 340, price: 55000,
+            image: "/images/caesar-salad.jpg", icon: "🥗",
+            desc: "Phiên bản Caesar ít béo với ức gà nướng.",
+            protein: 30, carbs: 15, fat: 12, fiber: 4,
+            time: "18 phút", serving: "1 người",
+            ingredients: "150g ức gà, xà lách romaine, phô mai parmesan, bánh mì nguyên cám",
+            steps: "Nướng gà → Cắt lát → Trộn cùng rau → Rắc parmesan và bánh mì nướng"
+        },
+        {
+            id: "f39", category: "salad",
+            name: "Salad dâu tây óc chó",
+            cal: 240, price: 48000,
+            image: "/images/strawberry-salad.jpg", icon: "🍓",
+            desc: "Dâu tây tươi kết hợp hạt óc chó và rau xanh.",
+            protein: 6, carbs: 22, fat: 12, fiber: 5,
+            time: "10 phút", serving: "1 người",
+            ingredients: "Dâu tây, xà lách, hạt óc chó, mật ong, chanh",
+            steps: "Cắt dâu tây → Trộn rau → Thêm óc chó → Rưới sốt mật ong chanh"
+        },
 
         /* ---- BREAKFAST ---- */
         {
@@ -142,6 +274,72 @@
             time: "15 phút", serving: "1 người",
             ingredients: "50g yến mạch, 1 quả trứng, 100ml sữa hạt, 1/2 quả chuối nghiền",
             steps: "Trộn bột yến mạch với trứng và sữa → Chiên từng chiếc lửa vừa → Xếp tầng, thêm trái cây"
+        },
+        {
+            id: "f40", category: "breakfast",
+            name: "Bánh mì bơ đậu phộng chuối",
+            cal: 350, price: 38000,
+            image: "/images/peanut-butter-toast.jpg", icon: "🍞",
+            desc: "Bánh mì nguyên cám với bơ đậu phộng và chuối.",
+            protein: 14, carbs: 42, fat: 12, fiber: 5,
+            time: "8 phút", serving: "1 người",
+            ingredients: "2 lát bánh mì nguyên cám, 2 thìa bơ đậu phộng, 1 quả chuối",
+            steps: "Nướng bánh mì → Phết bơ đậu phộng → Xếp chuối cắt lát lên trên"
+        },
+        {
+            id: "f41", category: "breakfast",
+            name: "Trứng bác rau củ",
+            cal: 290, price: 40000,
+            image: "/images/scrambled-eggs.jpg", icon: "🍳",
+            desc: "Trứng bác mềm cùng rau củ nhiều vitamin.",
+            protein: 18, carbs: 18, fat: 14, fiber: 3,
+            time: "12 phút", serving: "1 người",
+            ingredients: "3 quả trứng, cà chua, hành tây, cải bó xôi",
+            steps: "Đánh trứng → Xào rau củ → Cho trứng vào đảo đều đến chín"
+        },
+        {
+            id: "f42", category: "breakfast",
+            name: "Cháo yến mạch gà xé",
+            cal: 330, price: 42000,
+            image: "/images/oatmeal-chicken.jpg", icon: "🍲",
+            desc: "Cháo yến mạch và ức gà giàu protein.",
+            protein: 25, carbs: 32, fat: 7, fiber: 4,
+            time: "15 phút", serving: "1 người",
+            ingredients: "60g yến mạch, 100g ức gà, hành lá",
+            steps: "Luộc gà → Xé nhỏ → Nấu cùng yến mạch đến khi sánh"
+        },
+        {
+            id: "f43", category: "breakfast",
+            name: "Bánh mì cá ngừ healthy",
+            cal: 360, price: 45000,
+            image: "/images/tuna-toast.jpg", icon: "🐟",
+            desc: "Cá ngừ kết hợp bánh mì nguyên cám.",
+            protein: 26, carbs: 34, fat: 10, fiber: 4,
+            time: "10 phút", serving: "1 người",
+            ingredients: "2 lát bánh mì nguyên cám, cá ngừ hộp, xà lách",
+            steps: "Nướng bánh mì → Trộn cá ngừ → Kẹp cùng rau xanh"
+        },
+        {
+            id: "f44", category: "breakfast",
+            name: "Smoothie bowl trái cây",
+            cal: 310, price: 42000,
+            image: "/images/smoothie-bowl.jpg", icon: "🍓",
+            desc: "Smoothie đặc ăn cùng granola và trái cây.",
+            protein: 10, carbs: 50, fat: 6, fiber: 7,
+            time: "10 phút", serving: "1 người",
+            ingredients: "Chuối, dâu tây, granola, sữa chua Hy Lạp",
+            steps: "Xay trái cây → Đổ ra tô → Thêm granola và topping"
+        },
+        {
+            id: "f45", category: "breakfast",
+            name: "Khoai lang trứng luộc",
+            cal: 280, price: 35000,
+            image: "/images/sweet-potato-egg.jpg", icon: "🍠",
+            desc: "Bữa sáng đơn giản, giàu dinh dưỡng và no lâu.",
+            protein: 14, carbs: 36, fat: 6, fiber: 5,
+            time: "15 phút", serving: "1 người",
+            ingredients: "200g khoai lang, 2 quả trứng",
+            steps: "Luộc khoai lang → Luộc trứng → Thưởng thức cùng nhau"
         },
 
         /* ---- SMOOTHIES ---- */
@@ -195,6 +393,61 @@
             ingredients: "100ml sữa hạt, 50g yến mạch, 50g dâu tây, 50g việt quất",
             steps: "Cho vào máy xay → Xay mịn → Rót ra cốc, thêm đá nếu thích"
         },
+            {
+            id: "f46", category: "smoothies",
+            name: "Smoothie dâu tây chuối",
+            cal: 210, price: 36000,
+            image: "/images/strawberry-banana-smoothie.jpg", icon: "🍓",
+            desc: "Dâu tây và chuối ngọt tự nhiên, giàu vitamin C.",
+            protein: 5, carbs: 42, fat: 2, fiber: 4,
+            time: "5 phút", serving: "1 người",
+            ingredients: "100g dâu tây, 1 quả chuối, 200ml sữa hạt",
+            steps: "Cho tất cả nguyên liệu vào máy xay → Xay mịn → Thưởng thức"
+        },
+        {
+            id: "f47", category: "smoothies",
+            name: "Smoothie việt quất sữa chua",
+            cal: 230, price: 39000,
+            image: "/images/blueberry-yogurt-smoothie.jpg", icon: "🫐",
+            desc: "Việt quất kết hợp sữa chua Hy Lạp giàu chất chống oxy hóa.",
+            protein: 10, carbs: 35, fat: 4, fiber: 5,
+            time: "5 phút", serving: "1 người",
+            ingredients: "100g việt quất, 150g sữa chua Hy Lạp, đá viên",
+            steps: "Cho nguyên liệu vào máy xay → Xay nhuyễn → Rót ra ly"
+        },
+        {
+            id: "f48", category: "smoothies",
+            name: "Smoothie dứa cam nhiệt đới",
+            cal: 190, price: 35000,
+            image: "/images/tropical-smoothie.jpg", icon: "🍍",
+            desc: "Dứa và cam tươi mát, bổ sung vitamin C.",
+            protein: 3, carbs: 40, fat: 1, fiber: 4,
+            time: "5 phút", serving: "1 người",
+            ingredients: "100g dứa, 1 quả cam, đá viên",
+            steps: "Ép cam → Xay cùng dứa và đá → Rót ra ly"
+        },
+        {
+            id: "f49", category: "smoothies",
+            name: "Smoothie chocolate protein",
+            cal: 260, price: 42000,
+            image: "/images/chocolate-protein-smoothie.jpg", icon: "🍫",
+            desc: "Sinh tố protein vị chocolate dành cho người tập luyện.",
+            protein: 28, carbs: 24, fat: 6, fiber: 3,
+            time: "7 phút", serving: "1 người",
+            ingredients: "1 muỗng whey chocolate, 200ml sữa hạt, 1/2 quả chuối",
+            steps: "Cho tất cả vào máy xay → Xay mịn → Uống sau khi tập"
+        },
+        {
+            id: "f50", category: "smoothies",
+            name: "Smoothie kiwi táo xanh",
+            cal: 180, price: 37000,
+            image: "/images/kiwi-apple-smoothie.jpg", icon: "🥝",
+            desc: "Kiwi và táo xanh giúp thanh mát và hỗ trợ tiêu hóa.",
+            protein: 3, carbs: 36, fat: 1, fiber: 5,
+            time: "5 phút", serving: "1 người",
+            ingredients: "2 quả kiwi, 1 quả táo xanh, 150ml nước lọc",
+            steps: "Gọt vỏ kiwi → Cắt táo → Xay cùng nước → Thưởng thức"
+        },
 
         /* ---- VEGETARIAN ---- */
         {
@@ -236,6 +489,72 @@
             time: "12 phút", serving: "1 người",
             ingredients: "2 quả trứng, 1 nắm rau chân vịt, 1 bánh tráng, tiêu muối, sốt ớt nhẹ",
             steps: "Xào rau chân vịt → Đánh trứng với tiêu muối → Rán mỏng → Cuộn cùng bánh tráng"
+        },
+        {
+            id: "f51", category: "vegetarian",
+            name: "Nấm đùi gà nướng thảo mộc",
+            cal: 280, price: 48000,
+            image: "/images/herb-mushroom.jpg", icon: "🍄",
+            desc: "Nấm đùi gà nướng cùng thảo mộc và rau củ.",
+            protein: 12, carbs: 24, fat: 10, fiber: 5,
+            time: "20 phút", serving: "1 người",
+            ingredients: "200g nấm đùi gà, rosemary, dầu olive, bí ngòi",
+            steps: "Ướp nấm với thảo mộc → Nướng 180°C 15 phút → Ăn kèm rau củ"
+        },
+        {
+            id: "f52", category: "vegetarian",
+            name: "Mì Ý sốt cà chua chay",
+            cal: 390, price: 52000,
+            image: "/images/vegan-pasta.jpg", icon: "🍝",
+            desc: "Mì Ý nguyên cám với sốt cà chua và rau củ.",
+            protein: 14, carbs: 58, fat: 9, fiber: 7,
+            time: "25 phút", serving: "1 người",
+            ingredients: "100g mì nguyên cám, cà chua, hành tây, nấm",
+            steps: "Luộc mì → Nấu sốt cà chua → Trộn đều và thưởng thức"
+        },
+        {
+            id: "f53", category: "vegetarian",
+            name: "Đậu hũ sốt nấm",
+            cal: 340, price: 50000,
+            image: "/images/tofu-mushroom.jpg", icon: "🧈",
+            desc: "Đậu hũ non sốt nấm thơm ngon, giàu đạm thực vật.",
+            protein: 18, carbs: 26, fat: 12, fiber: 4,
+            time: "18 phút", serving: "1 người",
+            ingredients: "200g đậu hũ non, nấm đông cô, nước tương",
+            steps: "Áp chảo đậu hũ → Xào nấm → Chan sốt lên đậu hũ"
+        },
+        {
+            id: "f54", category: "vegetarian",
+            name: "Burger chay đậu đen",
+            cal: 410, price: 55000,
+            image: "/images/blackbean-burger.jpg", icon: "🍔",
+            desc: "Burger đậu đen ăn kèm rau xanh tươi mát.",
+            protein: 20, carbs: 48, fat: 12, fiber: 8,
+            time: "25 phút", serving: "1 người",
+            ingredients: "Đậu đen nghiền, bánh burger nguyên cám, rau xà lách",
+            steps: "Tạo hình patty đậu đen → Áp chảo → Kẹp cùng bánh và rau"
+        },
+        {
+            id: "f55", category: "vegetarian",
+            name: "Cơm gạo lứt rau củ áp chảo",
+            cal: 360, price: 50000,
+            image: "/images/brown-rice-veggie.jpg", icon: "🍚",
+            desc: "Cơm gạo lứt cùng rau củ áp chảo ít dầu.",
+            protein: 10, carbs: 56, fat: 8, fiber: 6,
+            time: "20 phút", serving: "1 người",
+            ingredients: "Gạo lứt, bông cải xanh, cà rốt, bắp non",
+            steps: "Nấu cơm → Áp chảo rau củ → Trộn đều và dùng nóng"
+        },
+        {
+            id: "f56", category: "vegetarian",
+            name: "Soup bí đỏ hạt bí",
+            cal: 240, price: 45000,
+            image: "/images/pumpkin-soup.jpg", icon: "🎃",
+            desc: "Soup bí đỏ mịn thơm, bổ sung vitamin A.",
+            protein: 6, carbs: 34, fat: 7, fiber: 5,
+            time: "20 phút", serving: "1 người",
+            ingredients: "300g bí đỏ, sữa hạt, hạt bí rang",
+            steps: "Luộc bí đỏ → Xay nhuyễn → Nấu cùng sữa hạt → Rắc hạt bí"
         },
 
         /* ---- SNACKS ---- */
@@ -279,15 +598,15 @@
             ingredients: "80g hạnh nhân, 80g chà là, 1 thìa dầu dừa, 1 thìa bột cacao",
             steps: "Xay nhuyễn tất cả → Vo thành viên tròn → Làm lạnh 20 phút"
         },
-        {
+         {
             id: "f26", category: "snacks",
-            name: "Bánh gà chiên giòn", cal: 210, price: 32000,
-            image: null, icon: "⚡",
-            desc: "Giòn tan mềm mọng cuốn hút.",
-            protein: 5, carbs: 26, fat: 10, fiber: 4,
-            time: "12 phút", serving: "6 viên",
-            ingredients: "80g hạnh nhân, 80g chà là, 1 thìa dầu dừa, 1 thìa bột cacao",
-            steps: "Xay nhuyễn tất cả → Vo thành viên tròn → Làm lạnh 20 phút"
+            name: "Bánh gạo lứt bơ hạnh nhân", cal: 170, price: 29000,
+            image: "/images/rice-cake-almond-butter.webp", icon: "🍘",
+            desc: "Bánh gạo lứt giòn kết hợp bơ hạnh nhân giàu năng lượng.",
+            protein: 6, carbs: 20, fat: 7, fiber: 3,
+            time: "3 phút", serving: "2 bánh",
+            ingredients: "2 bánh gạo lứt, 1 thìa bơ hạnh nhân, hạt chia",
+            steps: "Phết bơ hạnh nhân lên bánh gạo lứt → Rắc hạt chia → Dùng ngay"
         },
         {
             id: "f27", category: "snacks",
@@ -298,7 +617,53 @@
             time: "10 phút", serving: "1 người",
             ingredients: "150g sữa chua, 1/2 quả táo, 1/2 thìa quế, hạnh nhân băm nhỏ",
             steps: "Cắt táo thành dạng hạt lựu → Trộn vào sữa chua → Rắc quế và hạnh nhân"
-        }
+        },
+        {
+            id: "f57", category: "snacks",
+            name: "Bắp rang rong biển",
+            cal: 140, price: 25000,
+            image: "/images/seaweed-popcorn.jpg", icon: "🍿",
+            desc: "Bắp rang ít dầu kết hợp rong biển giàu khoáng chất.",
+            protein: 4, carbs: 24, fat: 3, fiber: 3,
+            time: "8 phút", serving: "1 gói",
+            ingredients: "50g hạt bắp, rong biển vụn, dầu olive",
+            steps: "Làm nổ bắp → Trộn rong biển → Đóng gói dùng ngay"
+        },
+        {
+            id: "f58", category: "snacks",
+            name: "Chuối sấy mật ong",
+            cal: 170, price: 26000,
+            image: "/images/honey-banana-chips.jpg", icon: "🍌",
+            desc: "Chuối sấy giòn ngọt nhẹ từ mật ong tự nhiên.",
+            protein: 2, carbs: 38, fat: 2, fiber: 3,
+            time: "15 phút", serving: "1 gói",
+            ingredients: "Chuối chín, mật ong nguyên chất",
+            steps: "Cắt lát chuối → Phết mật ong → Sấy đến giòn"
+        },
+        {
+            id: "f59", category: "snacks",
+            name: "Pudding hạt chia",
+            cal: 180, price: 30000,
+            image: "/images/chia-pudding.jpg", icon: "🥛",
+            desc: "Hạt chia ngâm sữa hạt cùng trái cây tươi.",
+            protein: 6, carbs: 22, fat: 8, fiber: 7,
+            time: "10 phút",
+            serving: "1 hũ",
+            ingredients: "Hạt chia, sữa hạnh nhân, dâu tây, việt quất",
+            steps: "Ngâm hạt chia qua đêm → Thêm trái cây → Dùng lạnh"
+        },
+        {
+            id: "f60", category: "snacks",
+            name: "Táo sấy quế",
+            cal: 150, price: 27000,
+            image: "/images/apple-chips.jpg", icon: "🍎",
+            desc: "Táo sấy giòn cùng bột quế thơm tự nhiên.",
+            protein: 1, carbs: 34, fat: 1, fiber: 4,
+            time: "12 phút",
+            serving: "1 gói",
+            ingredients: "Táo đỏ, bột quế",
+            steps: "Cắt lát táo → Rắc quế → Sấy giòn"
+        },
     ];
 
     /* ================= DỮ LIỆU MEAL PLAN ================= */
