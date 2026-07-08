@@ -381,3 +381,91 @@ body{ background:var(--nb-bg); }
     border-radius: 8px;
     display: inline-block;
 }
+/* ================= MENU SEARCH ================= */
+.menu-search-wrap{
+    max-width:680px;
+    margin:30px auto 0;
+}
+
+.menu-search-box{
+    width:100%;
+    min-height:52px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 15px;
+    background:#fff;
+    border:1.5px solid var(--nb-border);
+    border-radius:16px;
+    box-shadow:0 4px 16px rgba(29,185,84,0.08);
+    transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+.menu-search-box:focus-within{
+    border-color:var(--nb-green);
+    box-shadow:0 0 0 4px rgba(29,185,84,0.12);
+}
+
+.menu-search-icon{
+    font-size:18px;
+    line-height:1;
+    flex:0 0 auto;
+}
+
+#foodSearchInput{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:var(--nb-text);
+    font-family:inherit;
+    font-size:14px;
+    padding:14px 0;
+}
+
+#foodSearchInput::placeholder{
+    color:#9a9a9a;
+}
+
+.clear-food-search-btn{
+    width:28px;
+    height:28px;
+    flex:0 0 auto;
+    border:none;
+    border-radius:50%;
+    background:#edf7ef;
+    color:var(--nb-green-dark);
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+}
+
+.clear-food-search-btn:hover{
+    background:#dff3e4;
+    transform:scale(1.06);
+}
+
+.food-search-status{
+    min-height:18px;
+    margin:8px 4px 0;
+    color:var(--nb-muted);
+    font-size:12px;
+}
+
+.food-empty-state{
+    grid-column:1 / -1;
+    padding:50px 24px;
+    border:1.5px dashed #cfe8d6;
+    border-radius:var(--nb-radius-md);
+    background:#fff;
+    color:var(--nb-muted);
+    text-align:center;
+}
+
+.food-empty-state strong{
+    display:block;
+    margin-bottom:7px;
+    color:var(--nb-text);
+    font-size:16px;
+}

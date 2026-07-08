@@ -1,8 +1,39 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const token = localStorage.getItem("nutribae_token");
+    // Hỗ trợ cả key cũ và key mới để không bị lỗi giữa các trang.
+    const token =
+        localStorage.getItem("nutribaeToken") ||
+        localStorage.getItem("nutribae_token") ||
+        localStorage.getItem("token") ||
+        localStorage.getItem("authToken");
 
     const profileBox = document.getElementById("userProfileBox");
     const logoutBtn = document.getElementById("logoutBtn");
+
+    function clearLoginData() {
+        localStorage.removeItem("nutribaeToken");
+        localStorage.removeItem("nutribae_token");
+        localStorage.removeItem("nutribaeUser");
+        localStorage.removeItem("token");
+        localStorage.removeItem("authToken");
+    }
+
+    // Logout phải luôn hoạt động, kể cả khi token đã hết hạn.
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            const confirmLogout = confirm("Bạn có muốn đăng xuất khỏi NutriBae không?");
+
+            if (!confirmLogout) return;
+
+            clearLoginData();
+
+            if (profileBox) {
+                profileBox.style.display = "none";
+            }
+
+            // Quay về trang chủ ở trạng thái chưa đăng nhập.
+            window.location.replace("/page.html");
+        });
+    }
 
     if (!token || !profileBox) {
         return;
@@ -19,7 +50,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await res.json();
 
         if (!res.ok) {
-            localStorage.removeItem("nutribae_token");
+            clearLoginData();
+            profileBox.style.display = "none";
             return;
         }
 
@@ -41,13 +73,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (err) {
         console.error("Lỗi tải dữ liệu người dùng:", err);
     }
-
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", function () {
-            localStorage.removeItem("nutribae_token");
-            window.location.href = "login.html";
-        });
-    }
 });
 
 function convertGoal(goal) {
@@ -55,7 +80,8 @@ function convertGoal(goal) {
         lose_weight: "Giảm cân",
         maintain: "Giữ cân",
         gain_weight: "Tăng cân",
-        gain_muscle: "Tăng cơ"
+        gain_muscle: "Tăng cơ",
+        eat_clean: "Eat clean"
     };
 
     return goals[goal] || "--";

@@ -67,6 +67,36 @@
         <h2>Đặt món lẻ theo danh mục</h2>
         <p class="section-description">Click vào món để xem chi tiết dinh dưỡng, nguyên liệu và cách chế biến.</p>
     </div>
+    <p class="section-description">Click vào món để xem chi tiết dinh dưỡng, nguyên liệu và cách chế biến.</p>
+</div>
+
+<div class="menu-search-wrap">
+    <div class="menu-search-box">
+        <span class="menu-search-icon" aria-hidden="true">🔍</span>
+
+        <input
+            type="search"
+            id="foodSearchInput"
+            placeholder="Tìm món ăn, nguyên liệu hoặc danh mục..."
+            autocomplete="off"
+            aria-label="Tìm kiếm món ăn"
+        >
+
+        <button
+            type="button"
+            id="clearFoodSearchBtn"
+            class="clear-food-search-btn"
+            aria-label="Xóa nội dung tìm kiếm"
+            hidden
+        >
+            &times;
+        </button>
+    </div>
+
+    <p id="foodSearchStatus" class="food-search-status" aria-live="polite"></p>
+</div>
+
+<div class="category-row" id="categoryRow"></div>
     <div class="category-row" id="categoryRow"></div>
     <div class="food-grid" id="foodGrid"></div>
 </section>
@@ -85,8 +115,8 @@
             <div class="timeline-step" data-step="delivering"><div class="timeline-dot">3</div><p class="timeline-label">Đang giao</p></div>
             <div class="timeline-step" data-step="done"><div class="timeline-dot">4</div><p class="timeline-label">Hoàn thành</p></div>
         </div>
-        <button class="secondary-btn" id="demoAdvanceBtn">Demo: cập nhật trạng thái tiếp theo →</button>
-        <p class="tracking-demo-note">* Nút trên chỉ để demo giao diện. Khi triển khai thật, trạng thái sẽ được cập nhật tự động từ hệ thống bếp / vận chuyển hoặc trang quản trị NutriBae.</p>
+        <button class="secondary-btn" id="demoAdvanceBtn">Làm mới trạng thái đơn hàng</button>
+        <p class="tracking-demo-note">Trạng thái đơn hàng được cập nhật từ hệ thống quản trị NutriBae.</p>
     </div>
 </section>
 

@@ -687,14 +687,100 @@
     let currentCategory = "all";
     let recommendedPlan = null;
     let currentOrder = null;
-
+    let searchKeyword = "";
     const ORDER_STEPS = ["confirmed", "preparing", "delivering", "done"];
+    const ORDER_STATUS_LABELS = {
+        confirmed: "Đã xác nhận",
+        preparing: "Đang chuẩn bị",
+        delivering: "Đang giao",
+        done: "Hoàn thành",
+        cancelled: "Đã hủy"
+    };
 
     /* ================= HELPERS ================= */
-    function formatVND(n) { return n.toLocaleString("vi-VN") + "đ"; }
+    function formatVND(n) { return Number(n || 0).toLocaleString("vi-VN") + "đ"; }
     function $(sel)    { return document.querySelector(sel); }
     function $all(sel) { return Array.from(document.querySelectorAll(sel)); }
     function findCartItem(key) { return cart.find(it => it.key === key); }
+
+    function normalizeSearchText(value = "") {
+        return String(value)
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .replace(/Đ/g, "D")
+            .toLowerCase()
+            .trim();
+    }
+
+    function getCategoryLabel(categoryId) {
+        return CATEGORIES.find(category => category.id === categoryId)?.label || "";
+    }
+
+    function matchesFoodSearch(food, keyword) {
+        const searchTerms = normalizeSearchText(keyword)
+            .split(/\s+/)
+            .filter(Boolean);
+
+        if (searchTerms.length === 0) {
+            return true;
+        }
+
+        const searchableContent = normalizeSearchText([
+            food.name,
+            getCategoryLabel(food.category),
+            food.category,
+            food.desc,
+            food.ingredients,
+            food.steps
+        ].join(" "));
+
+        // Every entered word must appear somewhere in the searchable content.
+        return searchTerms.every(term => searchableContent.includes(term));
+    }
+
+    function getAuthToken() {
+        // Supports both the old login key and the standardized NutriBae key.
+        return (
+            localStorage.getItem("nutribaeToken") ||
+            localStorage.getItem("nutribae_token") ||
+            localStorage.getItem("token") ||
+            localStorage.getItem("authToken") ||
+            ""
+        );
+    }
+
+    async function apiRequest(url, options = {}) {
+        const headers = { ...(options.headers || {}) };
+        const token = getAuthToken();
+
+        if (token) {
+            headers.Authorization = `Bearer ${token}`;
+        }
+
+        if (options.body && !headers["Content-Type"]) {
+            headers["Content-Type"] = "application/json";
+        }
+
+        const response = await fetch(url, { ...options, headers });
+
+        let data = {};
+        try {
+            data = await response.json();
+        } catch (_) {
+            // The API may return an empty response body.
+        }
+
+        if (!response.ok) {
+            throw new Error(data.message || "Không thể xử lý yêu cầu");
+        }
+
+        return data;
+    }
+
+    function showOrderMessage(message) {
+        window.alert(message);
+    }
 
     /* ================= RENDER: PLAN GRID ================= */
     function renderPlans() {
@@ -735,52 +821,87 @@
     /* ================= RENDER: FOOD GRID ================= */
     function renderFoodGrid() {
         const grid = $("#foodGrid");
-        const list = currentCategory === "all" ? FOODS : FOODS.filter(f => f.category === currentCategory);
+        if (!grid) return;
 
-        grid.innerHTML = list.map(food => `
+        let foodList = currentCategory === "all"
+            ? [...FOODS]
+            : FOODS.filter(food => food.category === currentCategory);
+
+        foodList = foodList.filter(food => matchesFoodSearch(food, searchKeyword));
+
+        const searchStatus = $("#foodSearchStatus");
+        const clearSearchButton = $("#clearFoodSearchBtn");
+        const keyword = searchKeyword.trim();
+
+        if (clearSearchButton) {
+            clearSearchButton.hidden = !keyword;
+        }
+
+        if (searchStatus) {
+            searchStatus.textContent = keyword
+                ? `Tìm thấy ${foodList.length} món phù hợp với từ khóa “${keyword}”.`
+                : "";
+        }
+
+        if (foodList.length === 0) {
+            grid.innerHTML = `
+                <div class="food-empty-state">
+                    <strong>Không tìm thấy món phù hợp</strong>
+                    <span>Hãy thử tên món, nguyên liệu hoặc chọn danh mục khác nhé.</span>
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = foodList.map(food => `
             <div class="food-item-card" data-food-id="${food.id}">
                 <div class="food-visual-wrap">
                     ${food.image
                         ? `<img src="${food.image}" alt="${food.name}" class="food-visual-img" loading="lazy">`
                         : `<div class="food-visual-emoji" style="background:${visualBg(food.category)}">${food.icon}</div>`
                     }
-                    <span class="food-cat-badge">${CATEGORIES.find(c => c.id === food.category)?.icon || ""}</span>
+                    <span class="food-cat-badge">${CATEGORIES.find(category => category.id === food.category)?.icon || ""}</span>
                 </div>
+
                 <div class="food-info">
                     <h4>${food.name}</h4>
                     <span class="food-cal-tag">🔥 ${food.cal} cal</span>
                     <p class="food-desc">${food.desc}</p>
+
                     <div class="food-macros-mini">
                         <span>🥩 ${food.protein}g</span>
                         <span>🌾 ${food.carbs}g</span>
                         <span>💧 ${food.fat}g</span>
                     </div>
+
                     <div class="food-bottom-row">
                         <span class="food-price">${formatVND(food.price)}</span>
+
                         <div class="food-actions">
-                            
-                            <button class="add-to-cart-btn" data-food-id="${food.id}">+ Thêm</button>
+                            <button
+                                class="add-to-cart-btn"
+                                data-food-id="${food.id}"
+                                type="button"
+                            >
+                                + Thêm
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         `).join("");
 
-        $all(".add-to-cart-btn").forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                addFoodToCart(btn.dataset.foodId);
+        $all(".add-to-cart-btn").forEach(button => {
+            button.addEventListener("click", event => {
+                event.stopPropagation();
+                addFoodToCart(button.dataset.foodId);
             });
         });
-        $all(".food-detail-btn").forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                openFoodDetail(btn.dataset.foodId);
-            });
-        });
-        // Click cả card cũng mở detail
+
         $all(".food-item-card").forEach(card => {
-            card.addEventListener("click", () => openFoodDetail(card.dataset.foodId));
+            card.addEventListener("click", () => {
+                openFoodDetail(card.dataset.foodId);
+            });
         });
     }
 
@@ -1040,28 +1161,74 @@
         `).join("") + `<div class="checkout-summary-row checkout-summary-total"><span>Tổng cộng</span><span>${formatVND(cartTotal())}</span></div>`;
     }
 
-    function handleCheckoutSubmit(e) {
+    async function handleCheckoutSubmit(e) {
         e.preventDefault();
         if (cart.length === 0) return;
+        const token = getAuthToken();
+
+        if (!token) {
+            showOrderMessage("Vui lòng đăng nhập trước khi đặt hàng để NutriBae lưu đơn hàng của bạn.");
+            window.location.href = "../login_process/login.html";
+            return;
+        }
+
         const form = e.target;
-        currentOrder = { id: "NB" + Date.now().toString().slice(-8), status: "confirmed", customer: { fullName: form.fullName.value, phone: form.phone.value, address: form.address.value, paymentMethod: form.paymentMethod.value }, items: cart.map(it => ({ ...it })), total: cartTotal() };
-        cart = []; renderCart(); bumpCartBadge(); closeCart(); closeModal("checkoutModal"); form.reset();
-        renderTracking();
-        $("#tracking").style.display = "block";
-        $("#navTracking").style.display = "inline-block";
-        $("#tracking").scrollIntoView({ behavior: "smooth" });
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Đang tạo đơn hàng...";
+
+        try {
+            const result = await apiRequest("/api/orders", {
+                method: "POST",
+                body: JSON.stringify({
+                    fullName: form.fullName.value.trim(),
+                    phone: form.phone.value.trim(),
+                    address: form.address.value.trim(),
+                    paymentMethod: form.paymentMethod.value,
+                    items: cart.map(item => ({
+                        key: item.key,
+                        type: item.type,
+                        refId: item.refId,
+                        name: item.name,
+                        price: item.price,
+                        qty: item.qty,
+                        meta: item.meta,
+                        icon: item.icon
+                    }))
+                })
+            });
+
+            currentOrder = result.order;
+            cart = [];
+            renderCart();
+            bumpCartBadge();
+            closeCart();
+            closeModal("checkoutModal");
+            form.reset();
+            renderTracking();
+            $("#tracking").style.display = "block";
+            $("#navTracking").style.display = "inline-block";
+            $("#tracking").scrollIntoView({ behavior: "smooth" });
+            showOrderMessage(`Đặt hàng thành công! Mã đơn của bạn là #${currentOrder.orderCode}.`);
+        } catch (error) {
+            showOrderMessage(error.message);
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Xác nhận đặt hàng";
+        }
     }
 
     const paymentLabelMap = { cod: "Thanh toán khi nhận hàng (COD)", bank_transfer: "Chuyển khoản ngân hàng", ewallet: "Ví điện tử (Momo / ZaloPay)" };
 
     function renderTracking() {
         if (!currentOrder) return;
+        const itemCount = (currentOrder.items || []).reduce((sum, item) => sum + Number(item.qty || 0), 0);
         $("#trackingInfo").innerHTML = `
-            <div class="ti-block"><p>Mã đơn hàng</p><h4>#${currentOrder.id}</h4></div>
+            <div class="ti-block"><p>Mã đơn hàng</p><h4>#${currentOrder.orderCode || currentOrder.id}</h4></div>
             <div class="ti-block"><p>Khách hàng</p><h4>${currentOrder.customer.fullName} — ${currentOrder.customer.phone}</h4></div>
             <div class="ti-block"><p>Địa chỉ giao hàng</p><h4>${currentOrder.customer.address}</h4></div>
-            <div class="ti-block"><p>Phương thức thanh toán</p><h4>${paymentLabelMap[currentOrder.customer.paymentMethod]}</h4></div>
-            <div class="ti-block"><p>Số món</p><h4>${currentOrder.items.length} sản phẩm</h4></div>
+            <div class="ti-block"><p>Phương thức thanh toán</p><h4>${paymentLabelMap[currentOrder.paymentMethod] || currentOrder.paymentMethod}</h4></div>
+            <div class="ti-block"><p>Số món</p><h4>${itemCount} sản phẩm</h4></div>
             <div class="ti-block"><p>Tổng tiền</p><h4>${formatVND(currentOrder.total)}</h4></div>
         `;
         updateTimelineUI();
@@ -1072,23 +1239,97 @@
         $all(".timeline-step").forEach(stepEl => {
             const idx = ORDER_STEPS.indexOf(stepEl.dataset.step);
             stepEl.classList.remove("active", "done");
+            if (currentOrder.status === "cancelled") return;
             if (idx < currentIndex) stepEl.classList.add("done");
             if (idx === currentIndex) stepEl.classList.add("active");
         });
         const btn = $("#demoAdvanceBtn");
-        if (currentIndex >= ORDER_STEPS.length - 1) { btn.disabled = true; btn.textContent = "Đơn hàng đã hoàn thành 🎉"; }
-        else { btn.disabled = false; btn.textContent = "Demo: cập nhật trạng thái tiếp theo →"; }
+        btn.disabled = false;
+        btn.textContent = currentOrder.status === "cancelled"
+            ? "Đơn hàng đã bị hủy — Làm mới"
+            : `Làm mới trạng thái: ${ORDER_STATUS_LABELS[currentOrder.status] || currentOrder.status}`;
     }
 
-    function advanceOrderStatus() {
-        if (!currentOrder) return;
-        const idx = ORDER_STEPS.indexOf(currentOrder.status);
-        if (idx < ORDER_STEPS.length - 1) { currentOrder.status = ORDER_STEPS[idx + 1]; updateTimelineUI(); }
+    async function refreshOrderStatus() {
+        const token = getAuthToken();
+
+        if (!token) {
+            showOrderMessage("Vui lòng đăng nhập để xem đơn hàng.");
+            return;
+        }
+        try {
+            const result = await apiRequest("/api/orders/my/latest");
+            if (!result.order) {
+                showOrderMessage("Bạn chưa có đơn hàng nào.");
+                return;
+            }
+            currentOrder = result.order;
+            renderTracking();
+            $("#tracking").style.display = "block";
+            $("#navTracking").style.display = "inline-block";
+            showOrderMessage("Đã cập nhật trạng thái đơn hàng mới nhất.");
+        } catch (error) {
+            showOrderMessage(error.message);
+        }
+    }
+
+    async function loadLatestOrder() {
+        const token = getAuthToken();
+
+        if (!token) return;
+        try {
+            const result = await apiRequest("/api/orders/my/latest");
+            if (!result.order) return;
+            currentOrder = result.order;
+            renderTracking();
+            $("#tracking").style.display = "block";
+            $("#navTracking").style.display = "inline-block";
+        } catch (error) {
+            console.warn("Không thể tải đơn hàng gần nhất:", error.message);
+        }
+    }
+
+    function initializeFoodSearch() {
+        const foodSearchInput = $("#foodSearchInput");
+        const clearFoodSearchButton = $("#clearFoodSearchBtn");
+
+        if (foodSearchInput) {
+            foodSearchInput.addEventListener("input", event => {
+                searchKeyword = event.target.value;
+                renderFoodGrid();
+            });
+
+            foodSearchInput.addEventListener("keydown", event => {
+                if (event.key === "Escape") {
+                    searchKeyword = "";
+                    foodSearchInput.value = "";
+                    renderFoodGrid();
+                }
+            });
+        }
+
+        if (clearFoodSearchButton) {
+            clearFoodSearchButton.addEventListener("click", () => {
+                searchKeyword = "";
+
+                if (foodSearchInput) {
+                    foodSearchInput.value = "";
+                    foodSearchInput.focus();
+                }
+
+                renderFoodGrid();
+            });
+        }
     }
 
     /* ================= INIT ================= */
     function init() {
-        renderPlans(); renderCategories(); renderFoodGrid(); renderCart();
+        renderPlans();
+        renderCategories();
+        renderFoodGrid();
+        renderCart();
+        initializeFoodSearch();
+
         $("#cartOpenBtn").addEventListener("click", openCart);
         $("#cartCloseBtn").addEventListener("click", closeCart);
         $("#cartOverlay").addEventListener("click", closeCart);
@@ -1097,8 +1338,9 @@
         $("#suggestForm").addEventListener("submit", handleSuggestSubmit);
         $("#checkoutBtn").addEventListener("click", () => { if (cart.length === 0) return; renderCheckoutSummary(); openModal("checkoutModal"); });
         $("#checkoutForm").addEventListener("submit", handleCheckoutSubmit);
-        $("#demoAdvanceBtn").addEventListener("click", advanceOrderStatus);
+        $("#demoAdvanceBtn").addEventListener("click", refreshOrderStatus);
         $all(".food-modal").forEach(modal => { modal.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("active"); }); });
+        loadLatestOrder();
     }
 
     document.addEventListener("DOMContentLoaded", init);

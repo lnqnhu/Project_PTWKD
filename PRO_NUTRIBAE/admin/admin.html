@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriBae Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+    <main id="adminLoginView" class="login-page">
+        <section class="login-card">
+            <div class="brand-mark">Nutri<span>Bae</span></div>
+            
+            <h1>Admin Dashboard</h1>
+            <p class="login-subtitle">Đăng nhập bằng tài khoản quản trị để quản lý khách hàng và đơn hàng.</p>
+            <form id="adminLoginForm" class="login-form">
+                <label>Email quản trị<input type="email" id="adminEmail" autocomplete="email" required placeholder="admin@nutribae.local"></label>
+                <label>Mật khẩu<input type="password" id="adminPassword" autocomplete="current-password" required placeholder="Nhập mật khẩu"></label>
+                <p id="loginMessage" class="form-message" aria-live="polite"></p>
+                <button class="primary-btn" type="submit">Đăng nhập Admin</button>
+            </form>
+            <a class="back-link" href="/">← Quay về NutriBae</a>
+        </section>
+    </main>
+
+    <main id="adminApp" class="admin-shell" hidden>
+        <aside class="sidebar">
+            <div class="sidebar-brand">Nutri<span>Bae</span><small>Admin</small></div>
+            <nav class="sidebar-nav" aria-label="Admin navigation">
+                <button class="nav-item active" data-view="dashboard">▦ <span>Dashboard</span></button>
+                <button class="nav-item" data-view="orders">▣ <span>Quản lý đơn hàng</span></button>
+                <button class="nav-item" data-view="customers">◉ <span>Khách hàng</span></button>
+            </nav>
+            <div class="sidebar-bottom">
+                <p id="adminName" class="admin-name"></p>
+                <button id="logoutBtn" class="logout-btn">Đăng xuất</button>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">NUTRIBAE MANAGEMENT</p>
+                    <h1 id="pageTitle">Dashboard Overview</h1>
+                </div>
+                <button id="refreshBtn" class="ghost-btn" title="Tải lại dữ liệu">↻ Làm mới</button>
+            </header>
+
+            <section id="dashboardView" class="view-section">
+                <div class="summary-grid">
+                    <article class="summary-card"><p>Tổng đơn hàng</p><strong id="totalOrders">0</strong><span>Đơn đã tạo</span></article>
+                    <article class="summary-card"><p>Khách hàng</p><strong id="totalCustomers">0</strong><span>Tài khoản khách</span></article>
+                    <article class="summary-card"><p>Đơn đang xử lý</p><strong id="processingOrders">0</strong><span>Đã xác nhận / chuẩn bị</span></article>
+                    <article class="summary-card"><p>Đang giao</p><strong id="deliveringOrders">0</strong><span>Đơn vận chuyển</span></article>
+                    <article class="summary-card highlight"><p>Doanh thu đơn hàng</p><strong id="totalRevenue">0đ</strong><span>Không gồm đơn hủy</span></article>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-heading"><div><h2>Đơn hàng gần đây</h2><p>Thông tin mới nhất được lấy trực tiếp từ MongoDB.</p></div><button class="text-btn" data-goto="orders">Xem tất cả →</button></div>
+                    <div class="table-wrap"><table><thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Tổng tiền</th><th>Trạng thái</th><th>Thời gian</th></tr></thead><tbody id="recentOrdersBody"></tbody></table></div>
+                </section>
+            </section>
+
+            <section id="ordersView" class="view-section" hidden>
+                <section class="panel">
+                    <div class="panel-heading filters-row">
+                        <div><h2>Quản lý đơn hàng</h2><p>Xem thông tin đơn và cập nhật trạng thái giao hàng.</p></div>
+                        <div class="toolbar">
+                            <input id="orderSearch" type="search" placeholder="Tìm mã đơn, tên, email, SĐT">
+                            <select id="orderStatusFilter"><option value="">Tất cả trạng thái</option><option value="confirmed">Đã xác nhận</option><option value="preparing">Đang chuẩn bị</option><option value="delivering">Đang giao</option><option value="done">Hoàn thành</option><option value="cancelled">Đã hủy</option></select>
+                        </div>
+                    </div>
+                    <div class="table-wrap"><table class="wide-table"><thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Thanh toán</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody id="ordersBody"></tbody></table></div>
+                </section>
+            </section>
+
+            <section id="customersView" class="view-section" hidden>
+                <section class="panel">
+                    <div class="panel-heading filters-row">
+                        <div><h2>Quản lý khách hàng</h2><p>Xem và điều chỉnh thông tin hồ sơ dinh dưỡng của khách hàng.</p></div>
+                        <div class="toolbar"><input id="customerSearch" type="search" placeholder="Tìm tên hoặc email khách hàng"></div>
+                    </div>
+                    <div class="table-wrap"><table><thead><tr><th>Khách hàng</th><th>Email</th><th>Mục tiêu</th><th>Chỉ số cơ thể</th><th>Ngày tạo</th><th>Thao tác</th></tr></thead><tbody id="customersBody"></tbody></table></div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <div id="modalBackdrop" class="modal-backdrop" hidden>
+        <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header"><h2 id="modalTitle">Chi tiết</h2><button id="modalCloseBtn" class="icon-btn" aria-label="Đóng">×</button></div>
+            <div id="modalContent"></div>
+        </section>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/admin/admin.js"></script>
+</body>
+</html>
